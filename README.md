@@ -8,7 +8,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
 
-
 ## Jij
 
 ### Ontwerper:
@@ -25,16 +24,29 @@ Blauw
 <details open>
   <summary>De eerste versie/schets van je ontwerp & je persoonlijke uitdaging</summary>
 
-  ### De eerste versie/schets:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="eerste versie/schets">
+
+  ### De eerste versie schets:
+  <img src="readme-images/schets1.jpg" width="375px" alt="eerste versie/schets">
+
+
+### Mijn idee:
+
+Wat Mario uniek maakt is de mogelijkheid te transformeren met behulp van magische bloemen en producten. En dat wil ik ook toevoegen in mijn eigen werk.
+
+De pagina bestaat van enkele blokken van afbeelding en animatie. 
+ De blokken bevatten  afbeelding van Mario in verschillende kostuums, maar ook versies van zijn originele pak.  Aan de bovenste gedeelte heb je de nieuwste versie van mario met daarbij bijbehorende functionaliteiten. En hoe meer je naar beneden scrolt hoe ouder de versie wordt.
+
+Als je op de content krijg je meer informatie te zien die bijhoort of kleine animaties met geluid erachter.
+
+In de achtergrond heb je een kleurverloop van een lichte kleur naar een donkere kleur.
 
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+ - Animeren met afbeeldingen zoals png en svg 
+ - Ik wil geluid van Mario toevoegen binnen een animatie.
+ - Firguurtjes kunnen maken met puur css.
+ - Website interactiever maken met javascript
  
 </details>
 

@@ -1,14 +1,27 @@
+/*********/
+/* FONTS */
+/*********/
+@font-face {
+  font-family: "Super Mario 256" ;
+  src:url("../font/SuperMario256.ttf");
+}
+
 /*************/
 /* CSS RESET */
 /*************/
 
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
+  margin: 0;
+  padding: 0;
   box-sizing:border-box;  
 }
 
 body {
   margin:0;
+
+background: linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%);
+;
 }
 
 button:not([disabled]) {
@@ -24,7 +37,16 @@ button:not([disabled]) {
 /*********************/
 
 :root {
-  --color-headings:crimson
+  /* Hoofdtitel kleuren */
+  --mario-blauw: #009BD9;
+  --mario-geel: #FCCF00;
+  --mario-rood: #E62310;
+  --mario-groen: #44AF35;
+  --mario-zwart: #000000;
+
+  /* Hoofdtitelfonts */
+  --Kopjes: "Super Mario 256";
+  --paragraaf-lettertype: "Open Sans",  sans-serif;
 }
 
 
@@ -35,11 +57,84 @@ button:not([disabled]) {
 /* ALGEMENE STYLING */
 /********************/
 
-h1 {
-  color:var(--color-headings);
+
+
+li {
+  list-style: none;
 }
 
+ol {
+  
+  padding: none;
+}
 
+p {
+  font-family: var(--paragraaf-lettertype);
+}
 /* ... */
 
+a {
+  text-decoration: none;
+}
+
+/**********/
+/* HEADER */
+/**********/
+
+header {
+  background-color: var(--mario-rood);
+  display: flex;
+  place-content: center;
+  align-items: center;
+  padding: .5em;
+  gap: .5em;
+  }
+
+  header h1 {
+      color:white;
+      font-family: var(--Kopjes);
+      font-size: 2.5em;
+      text-shadow: .05em .1em .2em rgba(0, 0, 0, 0.752);
+  }
+
+  /* Mario Logo */
+  header a {
+  width: 2em;
+  height: 2em;
+  background-color: white;
+  color: var(--mario-rood);
+  display: flex;
+  place-content: center;
+  align-items:center;
+  border-radius: 50%;
+  font-family: var(--Kopjes);
+
+  }
+
+  /* De Kleurrijke Mario Naam*/
+  header p {
+    display: flex;
+     font-family: var(--Kopjes);
+    font-size: 3em;
+    transform: rotate(5deg);
+    -webkit-text-stroke: .05em black;
+    text-shadow: .05em  .1em black
+  }
+
+   header p span:nth-of-type(1) {
+     color: var(--mario-rood)
+   }
+
+  header p span:nth-of-type(2n),
+  header p span:last-of-type {
+color: var(--mario-groen)
+  }
+
+   header p span:nth-of-type(3n) {
+     color: var(--mario-geel)
+   }
+
+   header p span:nth-of-type(4) {
+    color: var(--mario-blauw);
+   }
 

@@ -25,7 +25,8 @@ body {
   margin: 0;
   background: linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%);
   background-repeat: no-repeat;
-  height: 100vmin;
+  height: 100vh;
+  width: 100%;
 
 }
 
@@ -89,6 +90,12 @@ a {
 h1 {
   font-family: "Super Mario 256";
 }
+
+footer {
+  background-color: var(--grond-kleur);
+  box-shadow: 0 -.5em var(--mario-groen);
+}
+
 
 /**********/
 /* HEADER */
@@ -164,6 +171,9 @@ main {
 }
 
 
+
+
+
 /* Detail over de mario */
 article:first-of-type {
   display: grid;
@@ -173,13 +183,16 @@ article:first-of-type {
 }
 
 article:first-of-type  h1{
-  color: #F2F3F4;
-  text-shadow: inset .5em  -.5em  .2em ;
+  color: #e6e6e6;
+
+  text-shadow:  .01em  .05em  .2em rgba(0  0  0  /0.752);
   text-align: center;
   -webkit-text-stroke: .05em black;
   font-size: 2.5em;
   padding: .3em;
+  
 }
+/* https: //css-tricks.com/snippets/css/gradient-text/ */
 
 /* Afbeelding van Mario zelf */
 article:first-of-type img {
@@ -195,12 +208,18 @@ article:nth-of-type(2) {
 
   grid-column-start: 2;
   grid-column-end: 4;
+
+  display: flex;
+align-items: center;
+justify-content: center;
+
 }
 
 article:nth-of-type(2) ol {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: .2em;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3, 10em);
+  gap: .5em;
 }
 
 article:nth-of-type(2) li {
@@ -213,8 +232,88 @@ article:nth-of-type(2) li {
 /* POWER UP MENU */
 /*****************/
 
-footer {
-  background-color: var(--grond-kleur) ;
-  box-shadow:   0 -.5em var(--mario-groen);
+
+footer ul {
+  display: flex;
+  place-content: center;
+  gap: 1em
 }
 
+footer li {
+  width: 5em;
+  height: 5em;
+  transform: translateY(-1em);
+  background-color: white;
+  border-radius: 50%;
+  transition: 1s;
+}
+
+footer a {
+    width: 5em;
+    height: 5em;
+   border-radius: 50%;
+}
+
+footer li:hover {
+  transform: translateY(-3em) scale(1.2);
+}
+
+/* Red Mushroom */
+footer li:first-of-type {
+  box-shadow: .3em .3em var(--mario-rood);
+}
+
+footer li:first-of-type img:hover{
+  animation-name: springende-mushroom;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes springende-mushroom {
+  0% {
+    transform: translateY(0);
+    animation-timing-function: ease-in;
+  }
+
+  50%{
+    transform: translateY(-2em);
+    animation-timing-function: ease-out;
+  }
+
+  100%{
+    transform: translateY(0);
+    animation-timing-function: ease-in;
+  }
+}
+
+/* Vuur bloem */
+footer li:nth-of-type(2) {
+  box-shadow: .3em .3em var(--mario-geel);
+}
+
+/* Ijs Bloem Power up */
+footer li:nth-of-type(3) {
+  box-shadow: .3em .3em var(--mario-blauw);
+}
+
+/* Tanooki Blad */
+footer li:nth-of-type(4) {
+  box-shadow: .3em .3em var(--mario-groen);
+}
+
+/* Sterretje */
+footer li:nth-of-type(5) {
+  box-shadow: .3em .3em var(--mario-geel);
+}
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (min-width:100em) {
+  main {
+    /* background-color: red; */
+    margin: 0 auto;
+    width: 70%;
+  }
+}

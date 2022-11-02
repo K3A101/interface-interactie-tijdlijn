@@ -2,8 +2,8 @@
 /* FONTS */
 /*********/
 @font-face {
-  font-family: "Super Mario 256" ;
-  src:url("../font/SuperMario256.ttf");
+  font-family: "Super Mario 256";
+  src: url("../font/SuperMario256.ttf");
 }
 
 /*************/
@@ -11,21 +11,26 @@
 /*************/
 
 /* naar een idee van Jen Simmons */
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing:border-box;  
+  box-sizing: border-box;
 }
 
 body {
-  margin:0;
+  display: grid;
+  gap: 1em;
+  margin: 0;
+  background: linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%);
+  background-repeat: no-repeat;
+  height: 100vmin;
 
-background: linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%);
-;
 }
 
 button:not([disabled]) {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 
@@ -46,7 +51,10 @@ button:not([disabled]) {
 
   /* Hoofdtitelfonts */
   --Kopjes: "Super Mario 256";
-  --paragraaf-lettertype: "Open Sans",  sans-serif;
+  --paragraaf-lettertype: "Open Sans", sans-serif;
+
+  /* Background kleuren */
+  --grond-kleur: #eeaf36;
 }
 
 
@@ -64,17 +72,22 @@ li {
 }
 
 ol {
-  
+
   padding: none;
 }
 
 p {
   font-family: var(--paragraaf-lettertype);
 }
+
 /* ... */
 
 a {
   text-decoration: none;
+}
+
+h1 {
+  font-family: "Super Mario 256";
 }
 
 /**********/
@@ -88,53 +101,120 @@ header {
   align-items: center;
   padding: .5em;
   gap: .5em;
-  }
+}
 
-  header h1 {
-      color:white;
-      font-family: var(--Kopjes);
-      font-size: 2.5em;
-      text-shadow: .05em .1em .2em rgba(0, 0, 0, 0.752);
-  }
+header h1 {
+  color: white;
+  font-family: var(--Kopjes);
+  font-size: 2.5em;
+  text-shadow: .05em .1em .2em rgba(0, 0, 0, 0.752);
+}
 
-  /* Mario Logo */
-  header a {
+/* Mario Logo */
+header a {
   width: 2em;
   height: 2em;
   background-color: white;
   color: var(--mario-rood);
   display: flex;
   place-content: center;
-  align-items:center;
+  align-items: center;
   border-radius: 50%;
   font-family: var(--Kopjes);
 
-  }
+}
 
-  /* De Kleurrijke Mario Naam*/
-  header p {
-    display: flex;
-     font-family: var(--Kopjes);
-    font-size: 3em;
-    transform: rotate(5deg);
-    -webkit-text-stroke: .05em black;
-    text-shadow: .05em  .1em black
-  }
+/* De Kleurrijke Mario Naam*/
+header p {
+  display: flex;
+  font-family: var(--Kopjes);
+  font-size: 3em;
+  transform: rotate(5deg);
+  -webkit-text-stroke: .05em black;
+  text-shadow: .05em .1em black
+}
 
-   header p span:nth-of-type(1) {
-     color: var(--mario-rood)
-   }
+header p span:nth-of-type(1) {
+  color: var(--mario-rood)
+}
 
-  header p span:nth-of-type(2n),
-  header p span:last-of-type {
-color: var(--mario-groen)
-  }
+header p span:nth-of-type(2n),
+header p span:last-of-type {
+  color: var(--mario-groen)
+}
 
-   header p span:nth-of-type(3n) {
-     color: var(--mario-geel)
-   }
+header p span:nth-of-type(3n) {
+  color: var(--mario-geel)
+}
 
-   header p span:nth-of-type(4) {
-    color: var(--mario-blauw);
-   }
+header p span:nth-of-type(4) {
+  color: var(--mario-blauw);
+}
+
+/***********/
+/*    MAIN */
+/***********/
+main {
+  margin: 0 3em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  /* grid-template-rows: 33em; */
+  gap: 2em;
+  place-content: center;
+}
+
+
+/* Detail over de mario */
+article:first-of-type {
+  display: grid;
+  background-color: white;
+  gap: 1em;
+  border-radius: 2em;
+}
+
+article:first-of-type  h1{
+  color: #F2F3F4;
+  text-shadow: inset .5em  -.5em  .2em ;
+  text-align: center;
+  -webkit-text-stroke: .05em black;
+  font-size: 2.5em;
+  padding: .3em;
+}
+
+/* Afbeelding van Mario zelf */
+article:first-of-type img {
+  width: 15em;
+  height: auto;
+   justify-self: center;
+}
+
+article:nth-of-type(2) {
+  background-image: url(../images/mario_clouds_desktop_by_sadistmoi_d23mm2j-fullview.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+article:nth-of-type(2) ol {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: .2em;
+}
+
+article:nth-of-type(2) li {
+  background-color: white;
+
+}
+
+
+/*****************/
+/* POWER UP MENU */
+/*****************/
+
+footer {
+  background-color: var(--grond-kleur) ;
+  box-shadow:   0 -.5em var(--mario-groen);
+}
 

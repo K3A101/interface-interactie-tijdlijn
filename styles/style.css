@@ -27,16 +27,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  min-height: 100%;
+}
 
 body {
+  position: relative;
   display: grid;
   gap: 1em;
   margin: 0;
-  background: linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%);
+  background: var(--achterground-gradient);
   background-repeat: no-repeat;
+    background-attachment: fixed;
 
   width: 100%;
-
+/* https: //stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats */
 }
 
 button:not([disabled]) {
@@ -58,7 +63,7 @@ button:not([disabled]) {
   --mario-rood: #E62310;
   --mario-groen: #44AF35;
   --mario-zwart: #000000;
-  --nintendo-switch-kleur:#adadad;
+  --nintendo-switch-kleur:radial-gradient(circle, rgb(255 255 255 / 0.2) 0%, rgba(255 255 255 / .8) 73%);
 
   /* Hoofdtitelfonts */
   --Kopjes: "mario";
@@ -66,9 +71,13 @@ button:not([disabled]) {
 
   /* Background kleuren */
   --grond-kleur: #eeaf36;
+  --achterground-gradient: linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%);
+  --blokjes-gradient-achtergrond: radial-gradient(circle, rgb(255  255  255 / 0.2) 0%, rgba(255  255 255 / 1) 73%);
+
 }
-
-
+/* radial-gradient(circle, rgba(236 200 34 /1) 0%, rgba(230 35 16 / 1) 89%) */
+ /* radial-gradient(circle, rgba(236 200 34 /0.07) 0%, rgba(230 40 16 / 0.5) 70%, rgba(162 17 3/ 0.8) 95%) */
+/* linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%) */
 
 
 
@@ -101,10 +110,10 @@ h1 {
   font-family: "mario";
 }
 
-footer {
+/* footer {
   background-color: var(--grond-kleur);
   box-shadow: 0 -.5em var(--mario-groen);
-}
+} */
 
 
 /**********/
@@ -178,6 +187,7 @@ main {
   /* grid-template-rows: 33em; */
   gap: 2em;
   place-content: center;
+  
 }
 
 
@@ -191,15 +201,15 @@ article:first-of-type {
   gap: 1em;
   padding: 1em;
   border-radius: 2em;
-  background-color: var(--nintendo-switch-kleur);
+  background: var(--nintendo-switch-kleur);
 }
 
 article:first-of-type  h1{
-  color: #e6e6e6;
+  color: white;
 
   text-shadow:  .01em  .05em  .2em rgba(0  0  0  /0.752);
   text-align: center;
-  -webkit-text-stroke: .05em black;
+  
   font-size: 2.5em;
   padding: .3em;
   
@@ -220,14 +230,71 @@ article:first-of-type img {
    justify-self: center;
 }
 
+/***************/
+/* CONTROLLERS */
+/***************/
+article:first-of-type > section  {
+  display: flex;
+position: relative;
+place-content: center;
+gap: 3em;
+}
+
+/* Container van de 4 knopjes */
+article:first-of-type>section section {
+  display: grid;
+  grid-template-columns:  1em 1em;
+  gap: 1em;
+
+
+position: relative;
+/* width: 2.5em;
+height: 2.5em; */
+}
+article:first-of-type>section section button {
+  width: 2em;
+  width: 2em;
+  padding: .5em;
+  border-radius: 50%;
+  border: none;
+  box-shadow: .2em .2em .5em rgba(0 0 0 / .5)
+}
+/* X */
+ article:first-of-type>section section button:nth-of-type(1) {
+   transform: translateX(1.5em);
+ }
+
+ /* A */
+ article:first-of-type>section section button:nth-of-type(2) {
+   transform: translateX(1.5em) translateY(1.5em);
+ }
+
+ /* Y */
+ article:first-of-type>section section button:nth-of-type(3) {
+   transform: translateX(-1.5em) translateY(-1.5em);
+ }
+
+ /* B */
+  article:first-of-type>section section button:nth-of-type(4) {
+    transform: translateX(-1.5em) ;
+  }
+
+   
+
 .podium {
   width: 10em;
   height: 4em;
   border-radius: 50%;
   border-bottom: 1em solid black;
   background-color: grey;
+  justify-self: center;
 }
 
+
+
+/*******************/
+/* MARIO SELECTION */
+/*******************/
 
 article:nth-of-type(2) {
   /* background-image: url(../images/mario_clouds_desktop_by_sadistmoi_d23mm2j-fullview.jpg); */
@@ -243,6 +310,13 @@ justify-content: center;
 
 }
 
+article:nth-of-type(2) img {
+  width: 7em;
+  height: auto;
+object-fit: contain;
+
+}
+
 article:nth-of-type(2) ol {
   display: grid;
   /* grid-template-columns: 1fr 1fr 1fr; */
@@ -251,19 +325,53 @@ article:nth-of-type(2) ol {
 }
 
 article:nth-of-type(2) li {
-  background-color: white;
+  border-radius: .5em;
+  width: 10em;
+  height: 10em;
+  background: var(--blokjes-gradient-achtergrond);
+/* transition: 1s; */
+}
 
+/* article:nth-of-type(2) li:hover {
+  transform: scale(1.5) rotate(15deg);
+} */
+
+article:nth-of-type(2) li  a{
+  display: grid;
+  place-content: center;
+
+}
+/* BLOKKEN IN DE ACHTERGROND */
+
+article:nth-of-type(3) {
+  position: absolute;
+  right: 5%;
+  transform: translateX(-30%) translateY(100%);
+  display: flex;
+  flex-direction: column;
+  gap:.3em;
+  
+}
+
+article:nth-of-type(3) section {
+  border-radius: .3em;
+  height: 3em;
+  width: 3em;
+  background-color: var(--mario-geel);
 }
 
 
 /*****************/
 /* POWER UP MENU */
 /*****************/
-
+footer {
+  position: fixed;
+  right: 19%;
+  bottom: .5em;
+}
 
 footer ul {
   display: flex;
-  place-content: center;
   gap: 1em
 }
 

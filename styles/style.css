@@ -2,9 +2,18 @@
 /* FONTS */
 /*********/
 @font-face {
-  font-family: "Super Mario 256";
-  src: url("../font/SuperMario256.ttf");
+  font-family: 'mario';
+  src: url('../font/supermario256-webfont.woff2') format('woff2'),
+    url('../font/supermario256-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
+
+/* @font-face {
+  font-family: "mario";
+  src: url("../font/SuperMario256.ttf");
+} */
 
 /*************/
 /* CSS RESET */
@@ -25,7 +34,7 @@ body {
   margin: 0;
   background: linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%);
   background-repeat: no-repeat;
-  height: 100vh;
+
   width: 100%;
 
 }
@@ -49,9 +58,10 @@ button:not([disabled]) {
   --mario-rood: #E62310;
   --mario-groen: #44AF35;
   --mario-zwart: #000000;
+  --nintendo-switch-kleur:#adadad;
 
   /* Hoofdtitelfonts */
-  --Kopjes: "Super Mario 256";
+  --Kopjes: "mario";
   --paragraaf-lettertype: "Open Sans", sans-serif;
 
   /* Background kleuren */
@@ -88,7 +98,7 @@ a {
 }
 
 h1 {
-  font-family: "Super Mario 256";
+  font-family: "mario";
 }
 
 footer {
@@ -172,14 +182,16 @@ main {
 
 
 
-
+/* Nintendo Switch */
 
 /* Detail over de mario */
 article:first-of-type {
   display: grid;
   background-color: white;
   gap: 1em;
+  padding: 1em;
   border-radius: 2em;
+  background-color: var(--nintendo-switch-kleur);
 }
 
 article:first-of-type  h1{
@@ -192,8 +204,15 @@ article:first-of-type  h1{
   padding: .3em;
   
 }
+/* Nintendo scherm */
 /* https: //css-tricks.com/snippets/css/gradient-text/ */
-
+ article:first-of-type figure {
+  display: grid;
+  place-content:center;
+  background-color: #303030;
+  padding: 1em;
+  border-radius: .5em;
+ }
 /* Afbeelding van Mario zelf */
 article:first-of-type img {
   width: 15em;
@@ -201,8 +220,17 @@ article:first-of-type img {
    justify-self: center;
 }
 
+.podium {
+  width: 10em;
+  height: 4em;
+  border-radius: 50%;
+  border-bottom: 1em solid black;
+  background-color: grey;
+}
+
+
 article:nth-of-type(2) {
-  background-image: url(../images/mario_clouds_desktop_by_sadistmoi_d23mm2j-fullview.jpg);
+  /* background-image: url(../images/mario_clouds_desktop_by_sadistmoi_d23mm2j-fullview.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -301,10 +329,28 @@ footer li:nth-of-type(4) {
   box-shadow: .3em .3em var(--mario-groen);
 }
 
+footer li:nth-of-type(4) img:hover {
+  animation-name: zwaaiende-blad;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out ;
+
+}
+
+@keyframes zwaaiende-blad {
+  0% , 50% , 100% {
+    transform: rotate(-5deg);
+  }
+25%, 75% {
+    transform: rotate(5deg);
+}
+}
 /* Sterretje */
 footer li:nth-of-type(5) {
   box-shadow: .3em .3em var(--mario-geel);
 }
+
+
 
 /*****************/
 /* MEDIA QUERIES */

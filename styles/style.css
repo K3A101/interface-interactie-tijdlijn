@@ -27,6 +27,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   min-height: 100%;
 }
@@ -38,14 +39,17 @@ body {
   margin: 0;
   background: var(--achterground-gradient);
   background-repeat: no-repeat;
-    background-attachment: fixed;
+  background-attachment: fixed;
+  overflow: hidden;
 
   width: 100%;
-/* https: //stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats */
+  /* https: //stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats */
 }
 
 button:not([disabled]) {
   cursor: pointer;
+  border: none;
+  background: transparent;
 }
 
 
@@ -63,7 +67,7 @@ button:not([disabled]) {
   --mario-rood: #E62310;
   --mario-groen: #44AF35;
   --mario-zwart: #000000;
-  --nintendo-switch-kleur:radial-gradient(circle, rgb(255 255 255 / 0.2) 0%, rgba(255 255 255 / .8) 73%);
+  --nintendo-switch-kleur: radial-gradient(circle, rgb(255 255 255 / 0.2) 0%, rgba(255 255 255 / .8) 73%);
 
   /* Hoofdtitelfonts */
   --Kopjes: "mario";
@@ -72,11 +76,16 @@ button:not([disabled]) {
   /* Background kleuren */
   --grond-kleur: #eeaf36;
   --achterground-gradient: linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%);
-  --blokjes-gradient-achtergrond: radial-gradient(circle, rgb(255  255  255 / 0.2) 0%, rgba(255  255 255 / 1) 73%);
-
+  --blokjes-gradient-achtergrond: radial-gradient(circle, rgb(255 255 255 / 0.2) 0%, rgba(255 255 255 / 1) 73%);
+  --speech-bubbel-kleur: white;
+   /* radial-gradient(circle, rgb(255 255 255 / 0.5) 0%, rgba(255 255 255 / 1) 73%); */
+  /* Box-shadows */
+  --back-shadow-voor-controllers: .2em .2em .5em rgba(0 0 0 / .5);
 }
+
+
 /* radial-gradient(circle, rgba(236 200 34 /1) 0%, rgba(230 35 16 / 1) 89%) */
- /* radial-gradient(circle, rgba(236 200 34 /0.07) 0%, rgba(230 40 16 / 0.5) 70%, rgba(162 17 3/ 0.8) 95%) */
+/* radial-gradient(circle, rgba(236 200 34 /0.07) 0%, rgba(230 40 16 / 0.5) 70%, rgba(162 17 3/ 0.8) 95%) */
 /* linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%) */
 
 
@@ -187,7 +196,7 @@ main {
   /* grid-template-rows: 33em; */
   gap: 2em;
   place-content: center;
-  
+
 }
 
 
@@ -204,82 +213,94 @@ article:first-of-type {
   background: var(--nintendo-switch-kleur);
 }
 
-article:first-of-type  h1{
+article:first-of-type h1 {
   color: white;
 
-  text-shadow:  .01em  .05em  .2em rgba(0  0  0  /0.752);
+  text-shadow: .01em .05em .2em rgba(0 0 0 /0.752);
   text-align: center;
-  
+
   font-size: 2.5em;
   padding: .3em;
-  
+
 }
+
 /* Nintendo scherm */
 /* https: //css-tricks.com/snippets/css/gradient-text/ */
- article:first-of-type figure {
+article:first-of-type figure {
   display: grid;
-  place-content:center;
+  place-content: center;
   background-color: #303030;
   padding: 1em;
   border-radius: .5em;
- }
+}
+
 /* Afbeelding van Mario zelf */
 article:first-of-type img {
-  width: 15em;
+  width: 60%;
   height: auto;
-   justify-self: center;
+  justify-self: center;
 }
 
 /***************/
 /* CONTROLLERS */
 /***************/
-article:first-of-type > section  {
+article:first-of-type>section {
   display: flex;
-position: relative;
-place-content: center;
-gap: 3em;
+  position: relative;
+  place-content: center;
+  gap: 6em;
 }
 
 /* Container van de 4 knopjes */
 article:first-of-type>section section {
   display: grid;
-  grid-template-columns:  1em 1em;
+  grid-template-columns: 1em 1em;
   gap: 1em;
 
 
-position: relative;
-/* width: 2.5em;
+  position: relative;
+  /* width: 2.5em;
 height: 2.5em; */
 }
+
+/* Joysticks */
+article:first-of-type>section>button {
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(25 25 25 / 0.5) 5%, rgba(0 0 0 / 1) 100%);
+  box-shadow: var(--back-shadow-voor-controllers);
+}
+
 article:first-of-type>section section button {
   width: 2em;
   width: 2em;
   padding: .5em;
   border-radius: 50%;
-  border: none;
-  box-shadow: .2em .2em .5em rgba(0 0 0 / .5)
+  box-shadow: var(--back-shadow-voor-controllers);
 }
+
 /* X */
- article:first-of-type>section section button:nth-of-type(1) {
-   transform: translateX(1.5em);
- }
+article:first-of-type>section section button:nth-of-type(1) {
+  transform: translateX(1.5em);
+}
 
- /* A */
- article:first-of-type>section section button:nth-of-type(2) {
-   transform: translateX(1.5em) translateY(1.5em);
- }
+/* A */
+article:first-of-type>section section button:nth-of-type(2) {
+  transform: translateX(1.5em) translateY(1.5em);
+}
 
- /* Y */
- article:first-of-type>section section button:nth-of-type(3) {
-   transform: translateX(-1.5em) translateY(-1.5em);
- }
+/* Y */
+article:first-of-type>section section button:nth-of-type(3) {
+  transform: translateX(-1.5em) translateY(-1.5em);
+}
 
- /* B */
-  article:first-of-type>section section button:nth-of-type(4) {
-    transform: translateX(-1.5em) ;
-  }
+/* B */
+article:first-of-type>section section button:nth-of-type(4) {
+  transform: translateX(-1.5em);
+}
 
-   
+
 
 .podium {
   width: 10em;
@@ -305,42 +326,113 @@ article:nth-of-type(2) {
   grid-column-end: 4;
 
   display: flex;
-align-items: center;
-justify-content: center;
+  align-items: center;
+  justify-content: center;
 
 }
 
 article:nth-of-type(2) img {
   width: 7em;
   height: auto;
-object-fit: contain;
+  object-fit: contain;
 
 }
 
 article:nth-of-type(2) ol {
   display: grid;
   /* grid-template-columns: 1fr 1fr 1fr; */
-    grid-template-columns: repeat(3, 10em);
+  grid-template-columns: repeat(3, 10em);
   gap: .5em;
 }
 
 article:nth-of-type(2) li {
+  position: relative;
   border-radius: .5em;
   width: 10em;
   height: 10em;
   background: var(--blokjes-gradient-achtergrond);
-/* transition: 1s; */
+  display: grid;
+  place-content: center;
+
+  /* transition: 1s; */
 }
 
 /* article:nth-of-type(2) li:hover {
   transform: scale(1.5) rotate(15deg);
 } */
 
-article:nth-of-type(2) li  a{
+article:nth-of-type(2) li>button {
+  background-color: none;
   display: grid;
   place-content: center;
 
 }
+
+
+
+/* Speech bubble */
+article:nth-of-type(2) li>section {
+  position: absolute;
+  transform: translateY(-13vh);
+  border-radius: 3em;
+  display: flex;
+  flex-direction: column-reverse;
+
+  background: var(--speech-bubbel-kleur);
+  /* border: .2em solid black; */
+  padding: 1em;
+  box-shadow: var(--back-shadow-voor-controllers);
+  display: none;
+}
+article:nth-of-type(2) li>section.open {
+    display: block;
+}
+
+
+article:nth-of-type(2) li>section::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid white;
+  border-top: 10px solid white;
+  border-bottom: 10px solid transparent;
+  right: 1.5em;
+  bottom: -.5em;
+}
+/* https://codepen.io/RajRajeshDn/pen/oZdRJw */
+
+article:nth-of-type(2) li>section>button {
+  order: 1;
+  width: 2em;
+  height: 2em;
+
+  background-color: var(--mario-rood);
+  border-radius: .5em;
+  align-self: end;
+}
+
+article:nth-of-type(2) li>section>h2 {
+  order: 1;
+
+}
+/* Anuleer knop */
+article:nth-of-type(2) li>section>button::before {
+
+  content: url(../images/close-button.svg);
+  height: .5em;
+  width: .5em;
+}
+
+/* https: //icons8.com/icons/set/cancel */
+
+/* De normal blocks met a ipv van button */
+/* article:nth-of-type(2) li  a{
+  display: grid;
+  place-content: center;
+
+} */
 /* BLOKKEN IN DE ACHTERGROND */
 
 article:nth-of-type(3) {
@@ -349,8 +441,8 @@ article:nth-of-type(3) {
   transform: translateX(-30%) translateY(100%);
   display: flex;
   flex-direction: column;
-  gap:.3em;
-  
+  gap: .3em;
+
 }
 
 article:nth-of-type(3) section {
@@ -359,6 +451,42 @@ article:nth-of-type(3) section {
   width: 3em;
   background-color: var(--mario-geel);
 }
+
+/*****************/
+/* Walking mario */
+/*****************/
+body>img {
+  width: 10%;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation-name: bewegen;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* animation-fill-mode: forwards; */
+}
+
+@keyframes bewegen {
+  0% {
+    left: -30%;
+
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+/* @keyframes bewegen {
+  
+} */
+/* https://stackoverflow.com/questions/47754999/css-animation-absolute-position-go-off-screen-to-right-and-come-back-from-left */
+
+
+
+
 
 
 /*****************/
@@ -385,9 +513,9 @@ footer li {
 }
 
 footer a {
-    width: 5em;
-    height: 5em;
-   border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
 }
 
 footer li:hover {
@@ -399,7 +527,7 @@ footer li:first-of-type {
   box-shadow: .3em .3em var(--mario-rood);
 }
 
-footer li:first-of-type img:hover{
+footer li:first-of-type img:hover {
   animation-name: springende-mushroom;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -411,12 +539,12 @@ footer li:first-of-type img:hover{
     animation-timing-function: ease-in;
   }
 
-  50%{
+  50% {
     transform: translateY(-2em);
     animation-timing-function: ease-out;
   }
 
-  100%{
+  100% {
     transform: translateY(0);
     animation-timing-function: ease-in;
   }
@@ -441,18 +569,24 @@ footer li:nth-of-type(4) img:hover {
   animation-name: zwaaiende-blad;
   animation-duration: .5s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out ;
+  animation-timing-function: ease-in-out;
 
 }
 
 @keyframes zwaaiende-blad {
-  0% , 50% , 100% {
+
+  0%,
+  50%,
+  100% {
     transform: rotate(-5deg);
   }
-25%, 75% {
+
+  25%,
+  75% {
     transform: rotate(5deg);
+  }
 }
-}
+
 /* Sterretje */
 footer li:nth-of-type(5) {
   box-shadow: .3em .3em var(--mario-geel);
@@ -463,7 +597,18 @@ footer li:nth-of-type(5) {
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
-
+/* Kleiner schermen */
+@media (max-width: 50em) {
+  body {
+    overflow: auto;
+  }
+  main {
+ 
+    display: flex;
+flex-direction: column;
+}
+}
+/* Grotere schermen */
 @media (min-width:100em) {
   main {
     /* background-color: red; */

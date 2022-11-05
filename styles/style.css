@@ -78,7 +78,7 @@ button:not([disabled]) {
   --achterground-gradient: linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%);
   --blokjes-gradient-achtergrond: radial-gradient(circle, rgb(255 255 255 / 0.2) 0%, rgba(255 255 255 / 1) 73%);
   --speech-bubbel-kleur: white;
-   /* radial-gradient(circle, rgb(255 255 255 / 0.5) 0%, rgba(255 255 255 / 1) 73%); */
+  /* radial-gradient(circle, rgb(255 255 255 / 0.5) 0%, rgba(255 255 255 / 1) 73%); */
   /* Box-shadows */
   --back-shadow-voor-controllers: .2em .2em .5em rgba(0 0 0 / .5);
 }
@@ -123,6 +123,7 @@ h1 {
   background-color: var(--grond-kleur);
   box-shadow: 0 -.5em var(--mario-groen);
 } */
+
 
 
 /**********/
@@ -239,7 +240,23 @@ article:first-of-type img {
   width: 60%;
   height: auto;
   justify-self: center;
+  animation: scale 3s infinite linear;
+  animation-play-state: paused;
+  /* animation-fill-mode: backwards; */
+  transform: scale(1.3);
 }
+/* Mario wordt een wasbeer */
+.nieuwe-afbeelding{
+  content:url(../images/tanooki-suit.png);
+
+}
+/* Mario wordt pyromaan */
+.tweede-afbeelding {
+   content:url(../images/fire-power.png);
+}
+
+
+
 
 /***************/
 /* CONTROLLERS */
@@ -384,8 +401,9 @@ article:nth-of-type(2) li>section {
   box-shadow: var(--back-shadow-voor-controllers);
   display: none;
 }
-article:nth-of-type(2) li>section.open {
-    display: block;
+
+article:nth-of-type(2) li>section.openBubble {
+  display: block;
 }
 
 
@@ -401,6 +419,7 @@ article:nth-of-type(2) li>section::before {
   right: 1.5em;
   bottom: -.5em;
 }
+
 /* https://codepen.io/RajRajeshDn/pen/oZdRJw */
 
 article:nth-of-type(2) li>section>button {
@@ -417,6 +436,7 @@ article:nth-of-type(2) li>section>h2 {
   order: 1;
 
 }
+
 /* Anuleer knop */
 article:nth-of-type(2) li>section>button::before {
 
@@ -455,32 +475,82 @@ article:nth-of-type(3) section {
 /*****************/
 /* Walking mario */
 /*****************/
-body>img {
+body> .wrapper img {
   width: 10%;
   z-index: 1;
   position: absolute;
   bottom: 0;
   left: 0;
-  animation-name: bewegen;
+  animation-name: x-axis;
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  /* animation-fill-mode: forwards; */
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
 }
 
-@keyframes bewegen {
+.wrapper {
+  animation-name: y-axis;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  transform: translateY(-1em);
+}
+
+
+@keyframes x-axis {
   0% {
     left: -30%;
 
   }
 
+99%{
+  opacity: 1;
+}
   100% {
     left: 100%;
+    opacity: 0;
   }
 }
 
-/* @keyframes bewegen {
-  
+@keyframes y-axis {
+ 
+  50%{
+
+    transform: translateY(-30em);
+  }
+}
+
+body>.wrapper img.pauseer-animatie ,
+.wrapper.pauseer-animatie{
+  animation-play-state: running;
+}
+/* Bouncing animation: https: //www.youtube.com/watch?v=QocWxqA28Ds&ab_channel=RedStapler */
+/* 
+@keyframes bewegen {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+
+  10% {
+    transform: scale(1.1, .9); 
+  }
+
+  20%{
+     transform: scale(.9, 1.1) translateY(-10em) translateX(18em);
+  }
+
+  40% {
+     transform: translateY(0) translateX(30vw);
+  }
+
+  45%{
+      transform: scale(1, .9) translateX(30vw);
+  }
+
+  60% {
+     transform: scale(.9, 1.1) translateY(-15vw) translateX(37vw);
+  }
 } */
 /* https://stackoverflow.com/questions/47754999/css-animation-absolute-position-go-off-screen-to-right-and-come-back-from-left */
 
@@ -602,12 +672,14 @@ footer li:nth-of-type(5) {
   body {
     overflow: auto;
   }
+
   main {
- 
+
     display: flex;
-flex-direction: column;
+    flex-direction: column;
+  }
 }
-}
+
 /* Grotere schermen */
 @media (min-width:100em) {
   main {
@@ -615,4 +687,5 @@ flex-direction: column;
     margin: 0 auto;
     width: 70%;
   }
+
 }

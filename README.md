@@ -1,10 +1,4 @@
 # Procesverslag
-Markdown is een simpele manier om HTML te schrijven.  
-Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-Nb. De standaardstructuur en de spartaanse opmaak van de README.md zijn helemaal prima. Het gaat om de inhoud van je procesverslag. Besteedt de tijd voor pracht en praal aan je website.
-
-Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard open zetten. Fijn om dat steeds voor de relevante stuk(ken) te doen.
 
 
 
@@ -101,6 +95,10 @@ Door die idee naar voren te laten brengen heb ik een nieuwe schetsen gemaakt. Mi
 
 
 ### Bevinding 5
+ Ik heb de powerup menu gemaakt op illustrator. Dan was het makkelijk om een svg van te maken. Ik heb op internet gezocht aan verschillende power-ups waar Mario zich kan transformeren.
+
+ <img src="readme-images/power-up-menu.png" width="375px" alt="Tweede versie schets">
+
 </details>
 
 
@@ -112,15 +110,31 @@ Door die idee naar voren te laten brengen heb ik een nieuwe schetsen gemaakt. Mi
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
   
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+   <img src="readme-images/versie1-pagina.png" width="375px" alt="Eeerste ontwerp">
 
-  #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+ Mijn ontwerp lijkt niet als een geheel. Dat betekent dat er geen samenhang was in het kleurenpallette. Bijvoorbeeld hier en daar had ik ronde hoeken  bij de nintendo switch en  de mario menu was er te maken met scherpe hoeken.
+ 
+ Er waren verschillende kleuren die ik heb gebruikt, en die niet paste bij elkaar zoals de grijs achter de licht blauwe achtergrond. 
+
+  #### oplossing: 
+Ik heb ten eerste een kleur gezocht die passend is bij mario. Verder heb ik gezocht aan de begin scherm van een mario spel. En rood kwam meest naar voren.
 
 
+   <img src="readme-images/versie2-pagina.png" width="375px" alt="Eeerste ontwerp">
+
+   Ik heb de blauwe kleurverloop verandert in rood oranje kleur.  De mario menu heb ik de blokjes transparant gemaakt met een rode kleurverloop.
+
+   De nintendo switch heb ik een bordeaux kleur gegeven zodat het past bij de thema.
+
+
+   Verder vond ik de kleur te fel, dus ik heb de achtergrond kleur van de body weer verandert naar blauw. Want het past beter bij de mario wereld spel.
+   Verder heb ik de alle vormen een ronde hoek gegeven zodat het past elkaar. 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+Volgende stap voor mijn ontwerp is de onderdelen responsive te maken. Ik was eerst van plan om het responsive te maken bij grotere schermen. Maar daarna heb ik besloten om ook voor kleine schermen te maken.
+
+  <img src="readme-images/ontwerp-mobile.png" width="375px" alt="Eeerste ontwerp">
+
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).

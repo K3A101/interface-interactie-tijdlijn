@@ -52,7 +52,9 @@ button:not([disabled]) {
   background: transparent;
 }
 
-
+*:focus {
+  outline: none;
+}
 
 
 
@@ -68,6 +70,8 @@ button:not([disabled]) {
   --mario-groen: #44AF35;
   --mario-zwart: #000000;
   --nintendo-switch-kleur: radial-gradient(circle, rgb(255 255 255 / 0.2) 0%, rgba(255 255 255 / .8) 73%);
+  --wolken-kleur: rgba(255 255 255);
+  --witte-kleur: white;
 
   /* Hoofdtitelfonts */
   --Kopjes: "mario";
@@ -78,12 +82,16 @@ button:not([disabled]) {
   --achterground-gradient: linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%);
   --blokjes-gradient-achtergrond: radial-gradient(circle, rgb(255 255 255 / 0.2) 0%, rgba(255 255 255 / 1) 73%);
   --speech-bubbel-kleur: white;
+  --joysticks-kleuren: radial-gradient(circle, rgba(25 25 25 / 0.5) 5%, rgba(0 0 0 / 1) 100%);
+  
+  /* States */
+  --joysticks-hover-state-kleuren: radial-gradient( circle at right , rgba(25 25 25 / 0.5) 5%, rgba(0 0 0 / 1) 100%);
   /* radial-gradient(circle, rgb(255 255 255 / 0.5) 0%, rgba(255 255 255 / 1) 73%); */
   /* Box-shadows */
   --back-shadow-voor-controllers: .2em .2em .5em rgba(0 0 0 / .5);
 }
 
-
+/* */
 /* radial-gradient(circle, rgba(236 200 34 /1) 0%, rgba(230 35 16 / 1) 89%) */
 /* radial-gradient(circle, rgba(236 200 34 /0.07) 0%, rgba(230 40 16 / 0.5) 70%, rgba(162 17 3/ 0.8) 95%) */
 /* linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%) */
@@ -191,6 +199,7 @@ header p span:nth-of-type(4) {
 /*    MAIN */
 /***********/
 main {
+  position: relative;
   margin: 0 3em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
@@ -206,6 +215,7 @@ main {
 
 /* Detail over de mario */
 article:first-of-type {
+  position: relative;
   display: grid;
   background-color: white;
   gap: 1em;
@@ -285,10 +295,17 @@ article:first-of-type>section>button {
   width: 5em;
   height: 5em;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(25 25 25 / 0.5) 5%, rgba(0 0 0 / 1) 100%);
+ ; background:var(--joysticks-kleuren);
   box-shadow: var(--back-shadow-voor-controllers);
+  transition: .5s;
 }
 
+article:first-of-type>section>button:hover {
+  background:var(--joysticks-hover-state-kleuren);
+  box-shadow: none;
+}
+
+/* De kleine buttons */
 article:first-of-type>section section button {
   width: 2em;
   width: 2em;
@@ -317,8 +334,6 @@ article:first-of-type>section section button:nth-of-type(4) {
   transform: translateX(-1.5em);
 }
 
-
-
 .podium {
   width: 10em;
   height: 4em;
@@ -328,6 +343,20 @@ article:first-of-type>section section button:nth-of-type(4) {
   justify-self: center;
 }
 
+/* Haal me knop */
+article:first-of-type > button {
+  border-radius: 2em;
+  position: absolute;
+  padding: .5em;
+  top: 2em;
+  right: -4em;
+  background:var(--witte-kleur);
+  transition: .5s;
+}
+
+article:first-of-type>button:hover {
+  box-shadow: var(--back-shadow-voor-controllers);
+}
 
 
 /*******************/
@@ -382,10 +411,26 @@ article:nth-of-type(2) li>button {
   background-color: none;
   display: grid;
   place-content: center;
-
+ transition: 1s;
 }
 
-
+article:nth-of-type(2) li>button:hover,
+article:nth-of-type(2) li>button:focus{
+ animation-name: blinkende-afbeelding;
+ animation-iteration-count: infinite;
+ animation-duration: .5s;
+ animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ 
+}
+  /* Hover state wanneer op je de mario hovert of focus */
+@keyframes blinkende-afbeelding {
+  0%, 100% {
+    transform: scale(.9);
+  }
+  50%{
+    transform: scale(1.4);
+  }
+}
 
 /* Speech bubble */
 article:nth-of-type(2) li>section {
@@ -453,25 +498,78 @@ article:nth-of-type(2) li>section>button::before {
   place-content: center;
 
 } */
-/* BLOKKEN IN DE ACHTERGROND */
+/* WOLKEN IN DE ACHTERGROND */
 
 article:nth-of-type(3) {
   position: absolute;
-  right: 5%;
+  z-index: 0;
+top: 0;
+  left: 10em;
   transform: translateX(-30%) translateY(100%);
   display: flex;
   flex-direction: column;
   gap: .3em;
-
+z-index: -1;
 }
 
 article:nth-of-type(3) section {
-  border-radius: .3em;
-  height: 3em;
-  width: 3em;
-  background-color: var(--mario-geel);
+
+  position: absolute;
+   display: flex; 
+   place-content: center;
+   align-items: center;
+   gap: .5em;
+   border-radius: 20em;
+    height: 3em;
+    width:10em;
+  background-color: var(--wolken-kleur);
+
+  
 }
 
+
+article:nth-of-type(3) section:nth-of-type(2n) {
+    height: 3em;
+  width:5em;
+}
+/* Ogen van de wolken */
+article:nth-of-type(3) section a {
+border-radius: 1em;
+  background-color: #000000;
+  width: .2em;
+  height: .7em;
+
+}
+
+article:nth-of-type(3) section:nth-of-type(1) {
+    
+transform: translateY(10em);
+}
+article:nth-of-type(3) section:nth-of-type(2) {
+  transform: translateY(13em) translateX(30em);
+}
+
+article:nth-of-type(3) section:nth-of-type(3) {
+transform: translateY(2em) translateX(30em);
+}
+
+article:nth-of-type(3) section:nth-of-type(1) {
+transform: translateY(5em) translateX(50em);
+}
+
+
+@keyframes wolken {
+   0% {
+     left: -30%;
+     /* transform: translateX(0); */
+   }
+
+   100% {
+     left: 100%;
+     /* transform: translateX(900%); */
+   }
+
+}
 /*****************/
 /* Walking mario */
 /*****************/
@@ -520,38 +618,11 @@ body> .wrapper img {
     transform: translateY(-30em);
   }
 }
-
+/* Met een button wordt de animatie gepauseert */
 body>.wrapper img.pauseer-animatie ,
 .wrapper.pauseer-animatie{
   animation-play-state: running;
 }
-/* Bouncing animation: https: //www.youtube.com/watch?v=QocWxqA28Ds&ab_channel=RedStapler */
-/* 
-@keyframes bewegen {
-  0% {
-    transform: translateX(0) translateY(0);
-  }
-
-  10% {
-    transform: scale(1.1, .9); 
-  }
-
-  20%{
-     transform: scale(.9, 1.1) translateY(-10em) translateX(18em);
-  }
-
-  40% {
-     transform: translateY(0) translateX(30vw);
-  }
-
-  45%{
-      transform: scale(1, .9) translateX(30vw);
-  }
-
-  60% {
-     transform: scale(.9, 1.1) translateY(-15vw) translateX(37vw);
-  }
-} */
 /* https://stackoverflow.com/questions/47754999/css-animation-absolute-position-go-off-screen-to-right-and-come-back-from-left */
 
 
@@ -674,10 +745,11 @@ footer li:nth-of-type(5) {
   }
 
   main {
-
     display: flex;
     flex-direction: column;
   }
+
+ 
 }
 
 /* Grotere schermen */

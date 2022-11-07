@@ -14,6 +14,10 @@ var mushroomButtom = document.querySelector("footer  li:nth-of-type(1)");
 // Variabel voor de joystick
 var joystickNintendo = document.querySelector("article:first-of-type>section>button");
 
+// button om de nintendo te verbergen
+var deWolkenButton = document.querySelector("article:first-of-type > button ");
+
+
 
 // EVENTLISTENERS
 // Click event op de grote mario afbeelding
@@ -21,6 +25,7 @@ tanookiButton.addEventListener("click", marioTanooki);
 vuurBloembutton.addEventListener("click", marioPyroman);
 mushroomButtom.addEventListener("click", marioWordtGroter);
 joystickNintendo.addEventListener("click", playAnimatieMetControllers );
+deWolkenButton.addEventListener("click", haalNintendoWeg);
 
 // FUNCTIES
 // Functie voor de Speech Bubble
@@ -72,6 +77,12 @@ function playAnimatieMetControllers() {
    deWrapper.classList.toggle("pauseer-animatie");
 }
 
+// Haal Nintendo weg
+function haalNintendoWeg(){
+    var deNintendo = document.querySelector("article:first-of-type");
+    deNintendo.classList.toggle("haal-weg");
+}
+
 
  
 
@@ -97,7 +108,7 @@ function playAnimatieMetControllers() {
 
 
 
-// Ik heb geprobeerd
+// Ik heb het geprobeerd
 
 // const selector = "article:nth-of-type(2) li >"
 // const imageSelector = `${selector} button`;

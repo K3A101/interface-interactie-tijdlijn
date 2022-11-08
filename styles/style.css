@@ -39,6 +39,22 @@ body {
   width: 100%;
   /* https: //stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats */
 }
+body.regenboog-achtergrond {
+  background: linear-gradient(45deg, crimson, darkorange, gold, yellowgreen, dodgerblue, rebeccapurple, crimson, darkorange, gold, yellowgreen, dodgerblue, rebeccapurple, crimson) left bottom / 200% 200%;
+  animation: regenboog 1s infinite linear;
+  opacity: .5;
+}
+
+@keyframes regenboog {
+ 0% {
+   background-position: left bottom;
+ }
+
+ 100% {
+   background-position: right top;
+ }
+}
+
 
 button:not([disabled]) {
   cursor: pointer;
@@ -128,7 +144,10 @@ h1 {
   font-family: "mario";
 }
 
-
+h2 {
+  font-family: var(--Kopjes) ;
+  font-size: .9em;
+}
 
 
 
@@ -479,24 +498,21 @@ article:nth-of-type(2) li>button:focus {
 /* SPEECH BUBBLE */
 /*****************/
 /* Speech bubble */
-article:nth-of-type(2) li>section {
+article:nth-of-type(2) li section {
   position: absolute;
-  transform: translateY(-13vh);
-  border-radius: 3em;
-  /* display: flex; */
-  /* flex-direction: column-reverse; */
+  transform: translateY(-7.5em);
+  border-radius: 2em;
   background: var(--speech-bubbel-kleur);
-  /* border: .2em solid black; */
   padding: 1em;
   box-shadow: var(--back-shadow-voor-controllers);
   display: none;
 }
 
-article:nth-of-type(2) li>section.openBubble {
+article:nth-of-type(2) li section.openBubble {
   display: block;
 }
 
-article:nth-of-type(2) li>section::before {
+article:nth-of-type(2) li section::before {
   content: "";
   width: 0px;
   height: 0px;
@@ -509,9 +525,11 @@ article:nth-of-type(2) li>section::before {
   bottom: -.5em;
 }
 
+
+
 /* https://codepen.io/RajRajeshDn/pen/oZdRJw */
 
-article:nth-of-type(2) li>section>button {
+article:nth-of-type(2) li section>button {
   order: 1;
   width: 2em;
   height: 2em;
@@ -519,12 +537,20 @@ article:nth-of-type(2) li>section>button {
   align-self: end;
 }
 
-article:nth-of-type(2) li>section>h2 {
-  order: 1;
+article:nth-of-type(2) li section>h2 {
+ text-align: center;
+}
+
+article:nth-of-type(2) li section > p {
+  line-height: 1.1;
+  font-size:.9em;
+  font-weight: 600;
+  text-align: left;
+  padding: .5em;
 }
 
 /* Anuleer knop */
-article:nth-of-type(2) li>section>button::before {
+article:nth-of-type(2) li section>button::before {
   content: url(../images/close-button.svg);
   height: .5em;
   width: .5em;
@@ -873,6 +899,10 @@ footer li:nth-of-type(5) img:hover {
     /* background-color: red; */
     margin: 0 auto;
     width: 70%;
+  }
+
+  footer {
+    right: 35%;
   }
 
 }

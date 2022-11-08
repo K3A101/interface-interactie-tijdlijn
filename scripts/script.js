@@ -42,6 +42,7 @@ var button7 = document.querySelector('article > ol li:nth-child(7) button');
 var button8 = document.querySelector('article > ol li:nth-child(8) button');
 var button9 = document.querySelector('article > ol li:nth-child(9) button');
 
+// Variabele voor de body
 
 
 
@@ -54,6 +55,7 @@ mushroomButtom.addEventListener("click", haalNintendoWeg);
 joystickNintendo.addEventListener("click", playAnimatieMetControllers);
 ijsBloemButton.addEventListener("click", marioIjsBloem);
 sterButton.addEventListener("click", speelHetMuziek);
+
 
 
 
@@ -149,7 +151,7 @@ function marioTanooki() {
     if (groteMarioAfbeelding.classList.contains("tanooki-afbeelding")) {
         deH1.innerHTML = "Tanooki Mario"
     } else {
-        deH1.innerHTML = "Mario Oddessy"
+        deH1.innerHTML = "Mario Seagale"
     }
 }
 
@@ -161,7 +163,7 @@ function marioPyroman() {
     if (pyroMarioAfbeelding.classList.contains("pyromaan-afbeelding")) {
         deTweedeTitel.innerHTML = "Pyro Mario";
     } else {
-        deTweedeTitel.innerHTML = "Mario Oddessy";
+        deTweedeTitel.innerHTML = "Mario Seagale";
     }
 }
 
@@ -186,25 +188,36 @@ function marioIjsBloem() {
     if (ijsPakAfbeelding.classList.contains("ijspak-mario")) {
         deDerdeTitel.innerHTML = "Mario als winterman";
     } else {
-        deDerdeTitel.innerHTML = "Mario oddessy"
+        deDerdeTitel.innerHTML = "Mario Seagale"
     }
 }
 
 // Als de gebruiker op de sterretje speelt dan komt hoor je een muziek in de achtergrond
 
+
+
 function speelHetMuziek() {
     // var url = "../audio/super-mario-star-sound";
+    var deBody = document.querySelector("body");
+
     const audio = new Audio("../audio/super-mario-star-sound.mp3");
     sterButton.classList.toggle("speel-muziek");
+
+
     if (sterButton.classList.contains("speel-muziek")) {
+        deBody.classList.add("regenboog-achtergrond");
+
         audio.play();
 
     } else {
-        audio.pause();
         audio.currentTime = 0;
+        audio.pause();
+        deBody.classList.remove("regenboog-achtergrond");
+
         //https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click
     }
 }
+
 
 
 // 

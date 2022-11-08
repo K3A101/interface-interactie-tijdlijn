@@ -91,11 +91,10 @@ Mijn eerste oplossing zou de kleine vierkanten met animatie omdraaien naar de ac
 
 In de eerste versie wilde ik met een `<button></button>` de Nintendo switch vanuit de linkerkant naar de juiste positie komen. Dit kon ik doen met css animatie maar door de layout die ik heb gebouwd is het niet mogelijk om dit te implementeren.
 
-Ik heb de Nintendo onzichtbaar gemaakt met `display: none;` en met knop zichtbaar laten maken. Om de knop te laten werken heb ik een click event toegevoegd. Dus als je op de rode champignon klikt dan open je de Nintendo Switch.
+Ik heb de Nintendo onzichtbaar gemaakt met `display: none;` en met knop zichtbaar laten maken. Om de knop te laten werken heb ik een click event toegevoegd. Dus als je op de rode paddenstoel klikt dan open je de Nintendo Switch.
 
- <img src="readme-images\progressive-disclosure-versie2.jpg" width="375px" alt="Nintendo Switch is onzichtbaar">
+ <img src="readme-images\progressive-disclosure-versie2.jpg"  alt="Nintendo Switch is onzichtbaar">
 
- <img src="readme-images/pagina-darkmode.png" width="375px" alt="Nintendo Switch is onzichtbaar">
 
 ### Bevinding 3: Schets kan niet laten zien of het responsive is.
 
@@ -123,7 +122,7 @@ Ik ga bijvoorbeeld aan de onderkant bij de footer een soort van menu maken met v
 
 <img src="readme-images\power-menu-versie2.png" width="375px" alt="Power up Menu">
 
-Hier is een screenshot van de power up men. Het bestaat de meest bekende krachten die mario gebruikt namelijk de rode Champigno, die zorgt dat Mario groter wordt. Maar ik heb dit button gebruikt om de Nintendo switch te verbergen. Verder heb je de vuur bloem, hier kan mario vuur aan zijn tegenstanders schieten. En zijn pak verandert wit en rood. Vervolgens heb je de ijs bloem kracht waar maar ijs kan schieten. De voorlaaste power up is een tanooki blad, tanooki betekent wasbeer in Japan en Mario krijgt een wasbeer kostuum waar hij met zijn start kan vliegen en tenslotte heb de sterretje kracht. Mario krijgt dan een regenboog kleur en hij krijgt meer snelheid en wordt sterker.
+Hier is een screenshot van de power up men. Het bestaat de meest bekende krachten die mario gebruikt namelijk de rode paddenstoel, die zorgt dat Mario groter wordt. Maar ik heb dit button gebruikt om de Nintendo switch te verbergen. Verder heb je de vuur bloem, hier kan mario vuur aan zijn tegenstanders schieten. En zijn pak verandert wit en rood. Vervolgens heb je de ijs bloem kracht waar maar ijs kan schieten. De voorlaaste power up is een tanooki blad, tanooki betekent wasbeer in Japan en Mario krijgt een wasbeer kostuum waar hij met zijn start kan vliegen en tenslotte heb de sterretje kracht. Mario krijgt dan een regenboog kleur en hij krijgt meer snelheid en wordt sterker.
 
 ### Bevinding 5: Power up Menu maken
 
@@ -141,67 +140,114 @@ Ik heb de power up menu gemaakt op illustrator. Dan was het makkelijk om een svg
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
   
 ### Bevinding 1: Eerste versie ontwerp
-   <img src="readme-images/versie1-pagina.png" width="375px" alt="Eerste digitale ontwerp">
+   <img src="readme-images/versie1-pagina.png"  alt="Eerste digitale ontwerp">
 
-Ik begon met het coderen van de eerste versie. Ik had nog geen plan over de kleurpallette maar wer over de layout dus ik heb ten eerste aan de layout gewerkt. Zoals het staat op me schets boven op. Ik heb hier eerst egbruikt gemaakt van grid en flex en helemaal aan het einde heb ik de gebruikt gemaakt van position voor onbelangrijke elementen. 
+Ik begon met het coderen van de eerste versie. Ik had nog geen plan over de kleurpallette maar wer over de layout dus ik heb ten eerste aan de layout gewerkt. Zoals het staat op me schets boven op. Ik heb hier eerst egbruikt gemaakt van grid en flex en helemaal aan het einde heb ik de gebruikt gemaakt van position voor onbelangrijke elementen.
 
-De feedback die ik heb gekregen was dat de vormegving niet helemaal bij elkaar passen. Bijvoorbeeld ik heb op bepaalde onderdelen ronde hoeken en ergens ander scherpe hoeken. Verder zag  de grijze nintendo switch niet verzorg uit maar in dit stadiun alleen gefocust op de layout van de webpagina. 
-
-
+De feedback die ik heb gekregen was dat de vormegving niet helemaal bij elkaar passen. Bijvoorbeeld ik heb op bepaalde onderdelen ronde hoeken en ergens ander scherpe hoeken. Verder zag de grijze nintendo switch niet verzorg uit maar in dit stadiun alleen gefocust op de layout van de webpagina.
 
 ### oplossing:
 
 Ik heb ten eerste een kleur gezocht die passend is bij mario. Verder heb ik gezocht aan de begin scherm van een mario spel. En rood kwam meest naar voren.
 
-   <img src="readme-images/versie2-pagina.png" width="375px" alt="Eeerste ontwerp">
+   <img src="readme-images/versie2-pagina.png"  alt="Eerste ontwerp">
 
 Ik heb de blauwe kleurverloop verandert in rood oranje kleur. De mario menu heb ik de blokjes transparant gemaakt met een rode kleurverloop.
 
 De nintendo switch heb ik een bordeaux kleur gegeven zodat het past bij de thema.
 
-Verder vond ik de kleur te fel, dus ik heb de achtergrond kleur van de body weer verandert naar blauw. Want de blauw geef rust aan je ogen en het past beter bij een mario wereld spel. 
-De achtergrond van de mario's heb ik wat transparanter gemaakt om een luchtig gevoel te geven want eigenlijk zijn we in de lucht. Uiteindelijk  heb ik  alle vormen een ronde hoek gegeven zodat ze een een geheel vormen.
+Verder vond ik de kleur te fel, dus ik heb de achtergrond kleur van de body weer verandert naar blauw. Want de blauw geef rust aan je ogen en het past beter bij een mario wereld spel.
+De achtergrond van de mario's heb ik wat transparanter gemaakt om een luchtig gevoel te geven want eigenlijk zijn we in de lucht. Uiteindelijk heb ik alle vormen een ronde hoek gegeven zodat ze een een geheel vormen.
 
-### Bevinding 2: Mario afbeeldingen zoeken
+### Bevinding 2: Mario afbeeldingen zoeken en dezelfde verhouding geven
+
+Om een tijdlijn te maken ging onderzoeken over de evolutie van Mario. Hiermee kan ik de visuele stijl van mario bekijken met de bijbehorende videospel. Daarmee heb ik verschillende mario versies gevonden die ik kon toevoegen in mijn eigen ontwerp. Ik heb eerst gekeken aan de volgorde van de evolutie en heb daarvan mario versies gezocht op basis van die periode. Verder heb ik de afbeelding gedownload als png en toegevoegd in mijn afbeelding bestandmap.
 
 ### Oplossing
 
-### Bevinding 3: Responsiveness
+De enige probleem met de afbeeldingen waren dat ze allemaal een ander verhouding hadden dus als de afbeelding wordt vervangen door een andere afbeelding dan wordt de nintendo switch kleiner.
+Dus ik heb ze allemaal dezelfde height en width gegeven met daarbij `object-fit: contain;`.
 
-Volgende stap voor mijn ontwerp is de onderdelen responsive te maken. Ik was eerst van plan om het responsive te maken bij grotere schermen. Maar daarna heb ik besloten om ook voor kleine schermen te maken.
+### Bevinding 3: Responsive voor grote en kleine schermen
 
-  <img src="readme-images/ontwerp-mobile.png" width="375px" alt="Eeerste ontwerp">
+Volgende stap voor mijn ontwerp is de onderdelen responsive te maken. Ik was eerst van plan om het responsive te maken bij grotere schermen. Maar daarna heb ik besloten om ook voor kleine schermen te maken. Ik had bovenop hoe ik hem wilde hebben.
 
 ### Oplossing:
 
-Ik heb gebruikt gemaakt van media queries. Waar ik de flex-direction verandert van row naar een column;
+ <img src="readme-images/ontwerp-mobile.png" width="375px" alt="Ontwerp voor kleinere schermen">
+
+ Ik heb gebruikt gemaakt van media queries. Het is een makkelijke manier om je layout aan te passen bij bepaalde scherm grootte. 
+
+
+ Voor kleine schermen heb ik  felx direction verandert in row enalles gingen gewoon onder elkaar te staan. DeMario Power up menu had een fixed position dus die moest ik eist naar rechts schuiven.
 
 ```
 @media (max-width: 50em) {
   body {
-    overflow: auto;
+    overflow-y: scroll;
   }
 
   main {
     display: flex;
     flex-direction: column;
   }
-
-
 }
 
 ```
 
-### Bevinding 4: Progressive disclosure
+<img src="readme-images\responsive-grote-schermen.png" width="375px" alt="Responsive voor grotere schermen">
 
-Om progressive disclosure toe te voegen wilde ik de nintendo verbergen en dan met een knop wil zichtbaar maken. Met die
-Tijdens mij tweede gesprek met Ine, heeft ze gezegd dat ik bij de haal me knop moet ik een betere call-to-action naam moet geven.
+Voor de grotere schermen heb ik de margin toegevoegd  bij de `<main>`. Zodat de content meer in het midden blijft. De `<body>` had een grid dus ik heb de spatie tussen de grid items groter gemaakt dan lijkt het alsof de inhoud in het midden is gecentreerd. En als laatste is de power menu naar de rechterkant verplaatst op een verticale lijn. 
+```
+@media (min-width:100em) {
+  body {
+    gap: 5em;
+  }
+
+  main {
+    /* background-color: red; */
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  footer {
+    top: 22%;
+    right: 5em;
+  }
+
+  footer ul {
+    flex-direction: column;
+  }
+
+}
+```
+
+### Bevinding 4: Progressive disclosure - Nintendo verbergen
+
+Ik heb bovenaan bij voortgang 1 al genoemd wat  mijn plannen waren voor progressive disclosure. Ik heb uiteindelijk gekozen om de nintendo switch te verbergen en weergeven met een knop. Dus als je de webpagina laad dan zie je alleen de mario's menu. Zoals te zien is bij de foto onderaan. 
+
+ <img src="readme-images/pagina-darkmode.png"  alt="Nintendo Switch is onzichtbaar">
 
 #### Oplossing:
 
-### Bevinding 5: Nintendo moet volledig in beeld
+Ten eerste had ik een "haal me" knop die lijkt als de wolken in de achtergrond maar door een beperking dus ik heb besloten om de rode paddenstoel te gebruiken. Om een feedworward te geven heb ik de paddenstoel bewegen zodat het aandacht trekt om daar te klikken. 
 
-...
+
+Als je op de verschillende mario's klikt dan krijg je meer informatie te zien over die mario en zijn veranderingen. 
+ 
+ <img src="readme-images\speech-bubble-versie1.png"  alt="Speech Bubbles versie 1">
+
+
+
+ <img src="readme-images\speech-bubble-versie2.png"  alt="Speech Bubbles versie 2">
+
+
+### Bevinding 5: Nintendo moet volledig in beeld
+Tijdens mij tweede voortgangsgesprek werd een kritiek gegeven dat door de grootte van mijn afbeelding kwam de nintendo niet helemaal in beeld en qua vormgeving. 
+
+### Oplossing
+Ik moest een manier vinden om alle afbeelding die binnen de Nintendo Switch moet komen dezelfde verhoudingen hebben. Ik kon de verhouding aanpassen op adobe photoshop maar ik had een makkelijker manier  gevonden die je met css kan doen en dat is met object fit. Eerst wel voor alle afbeelding voor de nintendo switch een hoogte en breedte aangeven. 
+Dus de afbeelding blijven nu op dezelfde grootte.
 
 </details>
 
@@ -211,25 +257,58 @@ Tijdens mij tweede gesprek met Ine, heeft ze gezegd dat ik bij de haal me knop m
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
   
   ### Bevinding 1: Dark mode toegevoegd
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+Ik wilde proberen om donkere modus in mijn ontwerp te implementeren. Want er wordt elke keer kwam die onderwerp naar voren en krijg nooit de kans om dat te doen. Dus deze keer heb ik wel geprobeerd. 
 
-#### oplossing:
+De enige onderdeel die verandert is de achtergrond van de `<body>` en de header. Ik heb gebruikt gemaakt van custom properties en media queries (prefer-color-scheme: dark)om die te maken.
+  #### Licht modus 
+   <img src="readme-images\versie3-pagina.png"  alt="Licht modus">
 
-Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+
+  #### Donker modus
+  
+  <img src="readme-images\pagina-darkmode.png"  alt="Donker modus">
+
 
 ### Bevinding 2: Springende Mario
-
-Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+Mario spellen zijn bekend met verborgen paaseieren die de speler moet ontdekken zoals een geheime wereld of een bijzonders schat. Ik wilde ook paaseieren toevoegen in mijn concept. 
 
 #### oplossing:
+  <img src="readme-images\springende-mario.png"  alt="Springende Mario">
 
-Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+ Ik wilde dat een mario zich van de ene naar de andere kant springen. Ik wilde dat je een karakter zelf kan besturen met de muis en/of toesten bord. Dan lijkt het alsof de gebruiker een 2d  mario spel aan het spelen is. Ik ben nog niet zo technisch om die zelf te bouwen dus ik heb een andere alternatief gezocht.
 
-### Bevinding 3: Interactieve webpagina
+Ik de  mario afbeelding  aan de onderkant gepositioneerd. Daarna heb ik in  de css twee animatie gemaakt. Een dat beweegt van links naar rechts en de andere animatie zorgt evoor dat de afbeelding springt. Met Javascript liet ik met de button de animatie pauseren en spelen. Het geeft een illusie dat mario aan het spelen bent. De knopje is  de joystick die te vinden is bij de nindtendo switch;
 
-...
 
-### Bevinding 4: Betere naam geving voor de buttons
+
+
+### Bevinding 3: Wisselende Beelden
+De laatse onderdeel was om de website interactiever en dynamischer te maken met behulp van javascript. Ik heb javascript gebruikt bij buttons waar je acties moet uitvoeren. De buttons zijn onderdelen van de Nintendo Switch, de power up menu en de Mario selectie menu.
+
+#### Power up menu
+>Hier is een screenshot van de power up men. Het bestaat de meest bekende krachten die mario gebruikt namelijk de rode paddenstoel, die zorgt dat Mario groter wordt. Maar ik heb dit button gebruikt om de Nintendo switch te verbergen. Verder heb je de vuur bloem, hier kan mario vuur aan zijn tegenstanders schieten. En zijn pak verandert wit en rood. Vervolgens heb je de ijs bloem kracht waar maar ijs kan schieten. De voorlaaste power up is een tanooki blad, tanooki betekent wasbeer in Japan en Mario krijgt een wasbeer kostuum waar hij met zijn start kan vliegen en tenslotte heb de sterretje kracht. Mario krijgt dan een regenboog kleur en hij krijgt meer snelheid en wordt sterker.
+
+
+Als je op de krachten klikt, dan kan je mario zien met zijn kostuum. Ook de naam verandert. 
+
+ <img src="readme-images\tanooki-mario.png"  alt="Tanooki Mario">
+ 
+ Hier is mario in een wasbeer pak.
+
+ <img src="readme-images\pyro-mario.png"  alt="Pyro Mario">
+  
+  Hier is mario met vuur krachten.
+
+
+### Bevinding 4: Geluid Toegevoegd
+Een van mijn uitdagingen waren om geluid te gebruiken. Het is gelukt om die te doen. Om de geluid aan te zetten moet de gebruiker op de sterretje klikken. Als dat gebeurd dan verandert de achtergrond in een regeboog animatie terwijl het geluid zich afspeelt.
+
+In meeste mario videogames speelt dit geluid af waneer  mario de ster pakt en ik dacht dat die een leuke toevoeging zou zijn.
+
+ <img src="readme-images\regenboog-met-achtergrond.png"  alt="Regenboog animatie">
+
+
+### Bevinding 5: Betere naam geving voor de buttons
 
 </details>
 
@@ -244,6 +323,12 @@ Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het 
 
 ### Dit ging goed/Heb ik geleerd:
 
+- Dark mode 
+- Veel javascript
+- Beter met animatie 
+- Beter met Grid 
+
+
 Korte omschrijving met plaatje(s)
 
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
@@ -251,6 +336,12 @@ Korte omschrijving met plaatje(s)
 ### Dit was lastig/Is niet gelukt:
 
 Korte omschrijving met plaatje(s)
+
+- Figuurtje te maken met  css
+- Wolken die van links naar rechts bewegen
+- Complexe focus state 
+- Om korte javascript te schrijven 
+
 
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
 </details>
@@ -297,4 +388,6 @@ Korte omschrijving met plaatje(s)
 - Prefer-color-scheme: dark - https: //designkojo.com/using-prefers-color-scheme-and-css-custom-properties
 
 - CSS Filter() - https://developer.mozilla.org/en-US/docs/Web/CSS/filter
+
+- Super Mario 256 Font - https://www.dafont.com/super-mario-256.font
 </details>

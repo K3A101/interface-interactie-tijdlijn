@@ -105,41 +105,84 @@ button9.addEventListener("click", () => {
 var nintendoSwitch = document.querySelector("article > figure > img");
 
 mario1981Button.addEventListener("click", () => {
-    nintendoSwitch.src = '../../images/mario-donkey-kong.PNG';
+    nintendoSwitch.src = 'https://github.com/K3A101/interface-interactie-tijdlijn/blob/main/images/mario-donkey-kong.png';
 });
 
 mario1985Button.addEventListener("click", () => {
-    nintendoSwitch.src = '../../images/first-mario.PNG';
+    nintendoSwitch.src = 'https://github.com/K3A101/interface-interactie-tijdlijn/blob/main/images/first-mario.png';
 });
 
 
 mario1991Button.addEventListener("click", () => {
-    nintendoSwitch.src = '../../images/mario-super-mario-bro-3.PNG';
+    nintendoSwitch.src = 'https://github.com/K3A101/interface-interactie-tijdlijn/blob/main/images/mario-super-mario-bro-3.png';
 });
 
 mario1992Button.addEventListener("click", () => {
-    nintendoSwitch.src = '../../images/mario-kart-1993.PNG';
+    nintendoSwitch.src = 'https://github.com/K3A101/interface-interactie-tijdlijn/blob/main/images/mario-kart-1993.png';
 });
 
 mario2007Button.addEventListener("click", () => {
-    nintendoSwitch.src = '../../images/mario-galaxy.PNG';
+    nintendoSwitch.src = 'https://github.com/K3A101/interface-interactie-tijdlijn/blob/main/images/mario-galaxy.png';
 });
 
 mario2006Button.addEventListener("click", () => {
-    nintendoSwitch.src = '../../images/mario-wii.PNG';
+    nintendoSwitch.src = 'https://github.com/K3A101/interface-interactie-tijdlijn/blob/main/images/mario-wii.png';
 });
 
 mario2020Button.addEventListener("click", () => {
-    nintendoSwitch.src = '../../images/mario-paper.PNG';
+    nintendoSwitch.src = 'https://github.com/K3A101/interface-interactie-tijdlijn/blob/main/images/mario-paper.png';
 });
 
 mario2015Button.addEventListener("click", () => {
-    nintendoSwitch.src = '../../images/mario-maker.PNG';
+    nintendoSwitch.src = 'https://github.com/K3A101/interface-interactie-tijdlijn/blob/main/images/mario-maker.png';
 });
 
 mario2013Button.addEventListener("click", () => {
-    nintendoSwitch.src = '../../images/mario-3d.PNG';
+    nintendoSwitch.src = 'https://github.com/K3A101/interface-interactie-tijdlijn/blob/main/images/mario-3d.png';
 });
+
+
+
+
+// var nintendoSwitch = document.querySelector("article > figure > img");
+
+// mario1981Button.addEventListener("click", () => {
+//     nintendoSwitch.src = '../../images/mario-donkey-kong.png';
+// });
+
+// mario1985Button.addEventListener("click", () => {
+//     nintendoSwitch.src = '../../images/first-mario.png';
+// });
+
+
+// mario1991Button.addEventListener("click", () => {
+//     nintendoSwitch.src = '../../images/mario-super-mario-bro-3.png';
+// });
+
+// mario1992Button.addEventListener("click", () => {
+//     nintendoSwitch.src = '../../images/mario-kart-1993.png';
+// });
+
+// mario2007Button.addEventListener("click", () => {
+//     nintendoSwitch.src = '../../images/mario-galaxy.png';
+// });
+
+// mario2006Button.addEventListener("click", () => {
+//     nintendoSwitch.src = '../../images/mario-wii.png';
+// });
+
+// mario2020Button.addEventListener("click", () => {
+//     nintendoSwitch.src = '../../images/mario-paper.png';
+// });
+
+// mario2015Button.addEventListener("click", () => {
+//     nintendoSwitch.src = '../../images/mario-maker.png';
+// });
+
+// mario2013Button.addEventListener("click", () => {
+//     nintendoSwitch.src = '../../images/mario-3d.png';
+// });
+
 
 
 //FUNCTIES

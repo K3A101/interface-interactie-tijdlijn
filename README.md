@@ -259,4 +259,6 @@ Ik heb gebruikt gemaakt van media queries. Waar ik de flex-direction verandert v
 - Informatie over de evolutie van Mario - https://www.superluigibros.com/evolution-of-mario
 
 - Prefer-color-scheme: dark - https: //designkojo.com/using-prefers-color-scheme-and-css-custom-properties 
+
+- CSS Filter() - https://developer.mozilla.org/en-US/docs/Web/CSS/filter
 </details>

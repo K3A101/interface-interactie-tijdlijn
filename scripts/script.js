@@ -24,11 +24,11 @@ var mario1981Button = document.querySelector("article:nth-of-type(2) img:nth-of-
 var mario1985Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(2)");
 var mario1991Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(3)");
 var mario1992Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(4)");
-var mario2007Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(5)");
-var mario2006Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(6)");
-var mario2020Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(7)");
+var mario2006Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(5)");
+var mario2007Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(6)");
+var mario2013Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(7)");
 var mario2015Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(8)");
-var mario2013Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(9)");
+var mario2020Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(9)");
 
 
 // Speechbubbles

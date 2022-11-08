@@ -39,6 +39,7 @@ body {
   width: 100%;
   /* https: //stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats */
 }
+
 body.regenboog-achtergrond {
   background: linear-gradient(45deg, crimson, darkorange, gold, yellowgreen, dodgerblue, rebeccapurple, crimson, darkorange, gold, yellowgreen, dodgerblue, rebeccapurple, crimson) left bottom / 200% 200%;
   animation: regenboog 1s infinite linear;
@@ -46,13 +47,13 @@ body.regenboog-achtergrond {
 }
 
 @keyframes regenboog {
- 0% {
-   background-position: left bottom;
- }
+  0% {
+    background-position: left bottom;
+  }
 
- 100% {
-   background-position: right top;
- }
+  100% {
+    background-position: right top;
+  }
 }
 
 
@@ -145,7 +146,7 @@ h1 {
 }
 
 h2 {
-  font-family: var(--Kopjes) ;
+  font-family: var(--Kopjes);
   font-size: .9em;
 }
 
@@ -538,12 +539,12 @@ article:nth-of-type(2) li section>button {
 }
 
 article:nth-of-type(2) li section>h2 {
- text-align: center;
+  text-align: center;
 }
 
-article:nth-of-type(2) li section > p {
+article:nth-of-type(2) li section>p {
   line-height: 1.1;
-  font-size:.9em;
+  font-size: .9em;
   font-weight: 600;
   text-align: left;
   padding: .5em;
@@ -804,16 +805,17 @@ footer li:nth-of-type(2) img:hover {
 }
 
 @keyframes stuiterende-bloem {
+
   0%,
   50%,
   100% {
     transform: scale(.9, 1.1);
   }
- 
+
   25%,
   75% {
     transform: scale(1.3);
-    animation-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
   }
 }
 
@@ -826,7 +828,7 @@ footer li:nth-of-type(3) img:hover {
   animation-name: stuiterende-bloem;
   animation-iteration-count: infinite;
   animation-duration: 2s;
-  
+
 }
 
 /* Tanooki Blad */
@@ -895,6 +897,10 @@ footer li:nth-of-type(5) img:hover {
 
 /* Grotere schermen */
 @media (min-width:100em) {
+  body {
+    gap: 5em;
+  }
+
   main {
     /* background-color: red; */
     margin: 0 auto;
@@ -902,7 +908,13 @@ footer li:nth-of-type(5) img:hover {
   }
 
   footer {
-    right: 35%;
+    top: 22%;
+    right: 5em;
+  }
+
+  footer ul {
+
+    flex-direction: column;
   }
 
 }

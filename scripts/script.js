@@ -10,12 +10,38 @@ const bubbles = document.querySelectorAll("article:nth-of-type(2) li>section");
 var tanookiButton = document.querySelector("footer  li:nth-of-type(4");
 var vuurBloembutton = document.querySelector("footer  li:nth-of-type(2");
 var mushroomButtom = document.querySelector("footer  li:nth-of-type(1)");
+var ijsBloemButton = document.querySelector("footer  li:nth-of-type(3)");
 
 // Variabel voor de joystick
 var joystickNintendo = document.querySelector("article:first-of-type>section>button");
 
 // button om de nintendo te verbergen
-var deWolkenButton = document.querySelector("article:first-of-type > button ");
+// var deWolkenButton = document.querySelector("article:first-of-type > button ");
+
+//mario selectie menu
+var mario1981Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(1)");
+var mario1985Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(2)");
+var mario1991Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(3)");
+var mario1992Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(4)");
+var mario2007Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(5)");
+var mario2006Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(6)");
+var mario2020Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(7)");
+var mario2015Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(8)");
+var mario2013Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(8)");
+
+
+// Speechbubbles
+var button1 = document.querySelector('article > ol >li:first-of-type');
+var button2 = document.querySelector('article > ol li:nth-child(2) button');
+var button3 = document.querySelector('article > ol li:nth-child(3) button');
+var button4 = document.querySelector('article > ol li:nth-child(4) button');
+var button5 = document.querySelector('article > ol li:nth-child(5) button');
+var button6 = document.querySelector('article > ol li:nth-child(6) button');
+var button7 = document.querySelector('article > ol li:nth-child(7) button');
+var button8 = document.querySelector('article > ol li:nth-child(8) button');
+var button9 = document.querySelector('article > ol li:nth-child(9) button');
+
+
 
 
 
@@ -23,75 +49,140 @@ var deWolkenButton = document.querySelector("article:first-of-type > button ");
 // Click event op de grote mario afbeelding
 tanookiButton.addEventListener("click", marioTanooki);
 vuurBloembutton.addEventListener("click", marioPyroman);
-mushroomButtom.addEventListener("click", marioWordtGroter);
-joystickNintendo.addEventListener("click", playAnimatieMetControllers );
-deWolkenButton.addEventListener("click", haalNintendoWeg);
+mushroomButtom.addEventListener("click", haalNintendoWeg);
+joystickNintendo.addEventListener("click", playAnimatieMetControllers);
+ijsBloemButton.addEventListener("click",marioIjsBloem );
 
-// FUNCTIES
-// Functie voor de Speech Bubble
-deButton.forEach(button => {
-    button.addEventListener("click", speechBubble);
-    function speechBubble() {
-        bubbles.forEach(bubble => {
-            bubble.classList.toggle("openBubble");
-        });
-    }
+
+
+
+//ARROW FUNCTIES 
+
+
+
+
+
+
+// Arrow functie en eventlisteners  voor de speech bubble
+button1.addEventListener("click", function () {
+    var bubble = document.querySelector('article > ol li:nth-of-type(1) section')
+    bubble.classList.toggle("openBubble");
 });
 
+button2.addEventListener("click", () => {
+    var bubble = document.querySelector('article > ol li:nth-of-type(2) section')
+    bubble.classList.toggle("openBubble");
+});
+button3.addEventListener("click", () => {
+    var bubble = document.querySelector('article > ol li:nth-of-type(3) section')
+    bubble.classList.toggle("openBubble");
+});
+button4.addEventListener("click", () => {
+    var bubble = document.querySelector('article > ol li:nth-of-type(4) section')
+    bubble.classList.toggle("openBubble");
+});
+button5.addEventListener("click", () => {
+    var bubble = document.querySelector('article > ol li:nth-of-type(5) section')
+    bubble.classList.toggle("openBubble");
+});
+button6.addEventListener("click", () => {
+    var bubble = document.querySelector('article > ol li:nth-of-type(6) section')
+    bubble.classList.toggle("openBubble");
+});
+button7.addEventListener("click", () => {
+    var bubble = document.querySelector('article > ol li:nth-of-type(7) section')
+    bubble.classList.toggle("openBubble");
+});
+button8.addEventListener("click", () => {
+    var bubble = document.querySelector('article > ol li:nth-of-type(8) section')
+    bubble.classList.toggle("openBubble");
+});
+button9.addEventListener("click", () => {
+    var bubble = document.querySelector('article > ol li:nth-of-type(9) section')
+    bubble.classList.toggle("openBubble");
+});
+
+
+
+
+//FUNCTIES
 // Functie voor de Grote afbeelding
-function marioTanooki(){
+function marioTanooki() {
     var groteMarioAfbeelding = document.querySelector("article:first-of-type img");
-    groteMarioAfbeelding.classList.toggle("nieuwe-afbeelding");
-     var deH1 = document.querySelector("article:first-of-type h1");
-     if (groteMarioAfbeelding.classList.contains("nieuwe-afbeelding")) {
-         deH1.innerHTML = "Tanooki Mario"
-     } else {
-         deH1.innerHTML = "Mario Oddessy"
-     }
+    groteMarioAfbeelding.classList.toggle("tanooki-afbeelding");
+    var deH1 = document.querySelector("article:first-of-type h1");
+    if (groteMarioAfbeelding.classList.contains("tanooki-afbeelding")) {
+        deH1.innerHTML = "Tanooki Mario"
+    } else {
+        deH1.innerHTML = "Mario Oddessy"
+    }
 }
 
 //Functie van Mario in vuur Pak
-function marioPyroman(){
-      var tweedemarioAfbeelding = document.querySelector("article:first-of-type img");
-      tweedemarioAfbeelding.classList.toggle("tweede-afbeelding");
-      var deTweedeTitel = document.querySelector("article:first-of-type h1");
-      if(tweedemarioAfbeelding.classList.contains("tweede-afbeelding")){
+function marioPyroman() {
+    var pyroMarioAfbeelding = document.querySelector("article:first-of-type img");
+    pyroMarioAfbeelding.classList.toggle("pyromaan-afbeelding");
+    var deTweedeTitel = document.querySelector("article:first-of-type h1");
+    if (pyroMarioAfbeelding.classList.contains("pyromaan-afbeelding")) {
         deTweedeTitel.innerHTML = "Pyro Mario";
-      } else {
-          deTweedeTitel.innerHTML = "Mario Oddessy";
-      }
+    } else {
+        deTweedeTitel.innerHTML = "Mario Oddessy";
+    }
 }
 
 // Functie Mario Wordt groter
 
-function marioWordtGroter() {
-    var derdeAfbeelding = document.querySelector("article:first-of-type img");
-    derdeAfbeelding.classList.toggle("derde-afbeelding");
-}
+// function marioWordtGroter() {
+//     var derdeAfbeelding = document.querySelector("article:first-of-type img");
+//     derdeAfbeelding.classList.toggle("derde-afbeelding");
+// }
 
 // Functie dat stop de springende Mario animatie
 function playAnimatieMetControllers() {
-   var deAnimatie = document.querySelector(" .wrapper img");
-   var deWrapper = document.querySelector(".wrapper");
-   deAnimatie.classList.toggle("pauseer-animatie");
-   deWrapper.classList.toggle("pauseer-animatie");
+    var deAnimatie = document.querySelector(" .wrapper img");
+    var deWrapper = document.querySelector(".wrapper");
+    deAnimatie.classList.toggle("pauseer-animatie");
+    deWrapper.classList.toggle("pauseer-animatie");
 }
 
 // Haal Nintendo weg
-function haalNintendoWeg(){
-    var deNintendo = document.querySelector("article:first-of-type");
+function haalNintendoWeg() {
+    var deNintendo = document.querySelector("article:nth-of-type(1)");
     deNintendo.classList.toggle("haal-weg");
+}
+//Mario in ijs pak
+function marioIjsBloem(){
+    var ijsPakAfbeelding = document.querySelector("article:first-of-type img");
+    ijsPakAfbeelding.classList.toggle("ijspak-mario");
+    var deDerdeTitel = document.querySelector("article:first-of-type h1");
+    if(ijsPakAfbeelding.classList.contains("ijspak-mario")){
+        deDerdeTitel.innerHTML ="Mario als winterman";
+    }else {
+          deDerdeTitel.innerHTML = "Mario oddessy"
+    }
 }
 
 
- 
+// 
 
 
 
 
 
 
+// FUNCTIES
+// Functie voor de Speech Bubble
 
+// var button = document.querySelector('article > ol li button')
+// var button2 = document.querySelector('article > ol li button')
+
+// button.addEventListener("click", speechBubble);
+// button2.addEventListener("click", speechBubble);
+
+// function speechBubble() {
+//     var bubble = document.querySelector('article ol li section')
+//     bubble.classList.toggle("openBubble");
+// }
 
 
 
@@ -172,12 +263,12 @@ function haalNintendoWeg(){
 
 
 
- 
+
 // deButton.addEventListener("click", speechBubble);
 
 // function speechBubble() {
 //     var bubble = document.querySelector("article:nth-of-type(2) li>section ");
- 
+
 //     bubble.classList.toggle("open");
 
 // }

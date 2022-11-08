@@ -4,7 +4,7 @@
 @font-face {
   font-family: 'mario';
   src: url('../font/supermario256-webfont.woff2') format('woff2'),
-  url('../font/supermario256-webfont.woff') format('woff');
+    url('../font/supermario256-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -95,10 +95,12 @@ button:focus-visible {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --mario-rood:#a52115;;
-   --achterground-gradient:linear-gradient(357deg, rgba(51, 122, 194, 1) 12%, rgba(27, 72, 181, 1) 50%, rgba(23, 37, 73, 1) 91%);
+    --mario-rood: #a52115;
+    ;
+    --achterground-gradient: linear-gradient(357deg, rgba(51, 122, 194, 1) 12%, rgba(27, 72, 181, 1) 50%, rgba(23, 37, 73, 1) 91%);
   }
 }
+
 /* https: //designkojo.com/using-prefers-color-scheme-and-css-custom-properties */
 
 
@@ -245,15 +247,19 @@ article:first-of-type figure {
 }
 
 /* Afbeelding van Mario zelf */
-article:first-of-type img {
-  width: 60%;
-  height: auto;
+article:first-of-type figure img {
+  object-fit: contain;
+  width: 300px;
+  height: 300px;
   justify-self: center;
   animation: scale 3s infinite linear;
   animation-play-state: paused;
   /* animation-fill-mode: backwards; */
   transform: scale(1.3);
+
 }
+
+/* Hoe maak je afbeelding dezelfde size: https://stackoverflow.com/questions/19414856/how-can-i-make-all-images-of-different-height-and-width-the-same-via-css */
 
 /* Mario wordt een wasbeer */
 .tanooki-afbeelding {
@@ -268,7 +274,7 @@ article:first-of-type img {
 }
 
 .ijspak-mario {
-  content:url(../images/mario-ijs.png);
+  content: url(../images/mario-ijs.png);
 }
 
 
@@ -304,9 +310,9 @@ article:first-of-type>section>button {
 }
 
 article:first-of-type>section>button:hover,
-article:first-of-type>section>button:focus{
+article:first-of-type>section>button:focus {
   filter: drop-shadow(var(--focus-state));
-   background:var(--joysticks-hover-state-kleuren);
+  background: var(--joysticks-hover-state-kleuren);
   box-shadow: none;
 }
 
@@ -339,10 +345,11 @@ article:first-of-type>section section button:nth-of-type(3) {
 article:first-of-type>section section button:nth-of-type(4) {
   transform: translateX(-1.5em);
 }
+
 /* De kleine buttons */
 article:first-of-type>section section button:hover,
-article:first-of-type>section section button:focus-visible{
-box-shadow: inset -.3em .3em .3em rgba(0 0 0 / .5);
+article:first-of-type>section section button:focus-visible {
+  box-shadow: inset -.3em .3em .3em rgba(0 0 0 / .5);
 }
 
 .podium {
@@ -355,7 +362,7 @@ box-shadow: inset -.3em .3em .3em rgba(0 0 0 / .5);
 }
 
 /* Haal me knop */
-article:first-of-type>button {
+/* article:first-of-type>button {
   border-radius: 2em;
   position: absolute;
   padding: .5em;
@@ -368,7 +375,7 @@ article:first-of-type>button {
 
 article:first-of-type>button:hover {
   box-shadow: var(--back-shadow-voor-controllers);
-}
+} */
 
 
 
@@ -389,7 +396,7 @@ article:nth-of-type(2) {
 }
 
 article:nth-of-type(2)::after {
-  content:"";
+  content: "";
   opacity: 0;
   width: 0;
   height: 0;
@@ -402,6 +409,17 @@ article:nth-of-type(2) img {
 }
 
 /* article:nth-of-type(2) img:nth-of-type(1) */
+/* .mario-1981-afbeelding {
+  content: url(../images/mario-donkey-kong.png);
+}
+
+.mario-1985-afbeelding {
+  content: url(../images/first-mario.png);
+}
+
+.mario-1991-afbeelding {
+  content: url(../images/mario-super-mario-bro-3.png);
+} */
 
 article:nth-of-type(2) ol {
   display: grid;
@@ -447,6 +465,7 @@ article:nth-of-type(2) li>button:focus {
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.4);
   }
@@ -489,6 +508,7 @@ article:nth-of-type(2) li>section::before {
   right: 1.5em;
   bottom: -.5em;
 }
+
 /* https://codepen.io/RajRajeshDn/pen/oZdRJw */
 
 article:nth-of-type(2) li>section>button {
@@ -521,15 +541,17 @@ article:nth-of-type(2) li>section>button::before {
 /* WOLKEN IN DE ACHTERGROND */
 article:nth-of-type(3) {
   position: absolute;
-   z-index: -1;
+  z-index: -1;
   top: 0;
   left: 10em;
   transform: translateX(-30%) translateY(100%);
   display: flex;
   flex-direction: column;
   gap: .3em;
+
 }
 
+/* Lichaam van de wolken */
 article:nth-of-type(3) section {
   position: absolute;
   display: flex;
@@ -540,6 +562,7 @@ article:nth-of-type(3) section {
   height: 3em;
   width: 10em;
   background-color: var(--wolken-kleur);
+
 }
 
 article:nth-of-type(3) section:nth-of-type(2n) {
@@ -556,34 +579,45 @@ article:nth-of-type(3) section a {
 }
 
 article:nth-of-type(3) section:nth-of-type(1) {
-  /* transform: translateY(10em); */
-left: 5em;
+  left: 25em;
+  animation: wolken-met-position 5s ease infinite;
 }
 
 article:nth-of-type(3) section:nth-of-type(2) {
-  transform: translateY(13em) translateX(30em);
+  /* transform: translateY(13em) translateX(30em); */
+  top: 4em;
+  left: 21em;
+  animation: wolken-met-position 4s ease infinite;
 }
 
 article:nth-of-type(3) section:nth-of-type(3) {
-  transform: translateY(1em) translateX(30em);
+  right: -80em;
+  top: 10em;
+  animation: wolken-met-position 3s ease infinite;
+
 }
 
-article:nth-of-type(3) section:nth-of-type(1) {
-  transform: translateY(5em) translateX(50em);
+article:nth-of-type(3) section:nth-of-type(4) {
+  right: -70em;
+  top: 1em;
+  animation: wolken-met-position 6s ease infinite;
 }
 
-@keyframes wolken {
+@keyframes wolken-met-position {
+  50% {
+    transform: translateY(25%);
+  }
+}
+
+/* 
+@keyframes wolken-bewegen {
   0% {
     left: -30%;
-    /* transform: translateX(0); */
   }
-
-  100% {
+  100%{
     left: 100%;
-    /* transform: translateX(900%); */
   }
-}
-
+} */
 
 
 
@@ -686,11 +720,19 @@ footer li:first-of-type {
   box-shadow: .3em .3em var(--mario-rood);
 }
 
-footer li:first-of-type img:hover {
+
+footer li:first-of-type img {
   animation-name: springende-mushroom;
   animation-duration: 1s;
+  animation-iteration-count: 5;
+}
+
+footer li:first-of-type img:hover {
+  animation-name: mushroom-wordt-onzichtbaar;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
 }
+
 
 @keyframes springende-mushroom {
   0% {
@@ -709,14 +751,56 @@ footer li:first-of-type img:hover {
   }
 }
 
+@keyframes mushroom-wordt-onzichtbaar {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+    filter: blur(.5em)
+  }
+}
+
 /* Vuur bloem */
 footer li:nth-of-type(2) {
   box-shadow: .3em .3em var(--mario-geel);
 }
 
+footer li:nth-of-type(2) img:hover {
+  animation-name: stuiterende-bloem;
+
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+@keyframes stuiterende-bloem {
+  0%,
+  50%,
+  100% {
+    transform: scale(.9, 1.1);
+  }
+ 
+  25%,
+  75% {
+    transform: scale(1.3);
+    animation-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  }
+}
+
 /* Ijs Bloem Power up */
 footer li:nth-of-type(3) {
   box-shadow: .3em .3em var(--mario-blauw);
+}
+
+footer li:nth-of-type(3) img:hover {
+  animation-name: stuiterende-bloem;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  
 }
 
 /* Tanooki Blad */
@@ -750,6 +834,22 @@ footer li:nth-of-type(5) {
   box-shadow: .3em .3em var(--mario-geel);
 }
 
+footer li:nth-of-type(5) img:hover {
+  animation-name: draaiende-sterretje;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+@keyframes draaiende-sterretje {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 
 /*****************/

@@ -11,6 +11,7 @@ var tanookiButton = document.querySelector("footer  li:nth-of-type(4");
 var vuurBloembutton = document.querySelector("footer  li:nth-of-type(2");
 var mushroomButtom = document.querySelector("footer  li:nth-of-type(1)");
 var ijsBloemButton = document.querySelector("footer  li:nth-of-type(3)");
+var sterButton = document.querySelector("footer  li:nth-of-type(5)");
 
 // Variabel voor de joystick
 var joystickNintendo = document.querySelector("article:first-of-type>section>button");
@@ -20,14 +21,14 @@ var joystickNintendo = document.querySelector("article:first-of-type>section>but
 
 //mario selectie menu
 var mario1981Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(1)");
-var mario1985Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(2)");
-var mario1991Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(3)");
-var mario1992Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(4)");
-var mario2007Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(5)");
-var mario2006Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(6)");
-var mario2020Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(7)");
-var mario2015Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(8)");
-var mario2013Button = document.querySelector("article:nth-of-type(2) img:nth-of-type(8)");
+var mario1985Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(2)");
+var mario1991Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(3)");
+var mario1992Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(4)");
+var mario2007Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(5)");
+var mario2006Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(6)");
+var mario2020Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(7)");
+var mario2015Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(8)");
+var mario2013Button = document.querySelector("article:nth-of-type(2) ol li:nth-of-type(9)");
 
 
 // Speechbubbles
@@ -51,17 +52,12 @@ tanookiButton.addEventListener("click", marioTanooki);
 vuurBloembutton.addEventListener("click", marioPyroman);
 mushroomButtom.addEventListener("click", haalNintendoWeg);
 joystickNintendo.addEventListener("click", playAnimatieMetControllers);
-ijsBloemButton.addEventListener("click",marioIjsBloem );
-
+ijsBloemButton.addEventListener("click", marioIjsBloem);
+sterButton.addEventListener("click", speelHetMuziek);
 
 
 
 //ARROW FUNCTIES 
-
-
-
-
-
 
 // Arrow functie en eventlisteners  voor de speech bubble
 button1.addEventListener("click", function () {
@@ -103,6 +99,45 @@ button9.addEventListener("click", () => {
 });
 
 
+//arrow functie en eventlisteners voor de mario selectie menu
+var nintendoSwitch = document.querySelector("article > figure > img");
+
+mario1981Button.addEventListener("click", () => {
+    nintendoSwitch.src = '../images/mario-donkey-kong.png';
+});
+
+mario1985Button.addEventListener("click", () => {
+    nintendoSwitch.src = '../images/first-mario.png';
+});
+
+
+mario1991Button.addEventListener("click", () => {
+    nintendoSwitch.src = '../images/mario-super-mario-bro-3.png';
+});
+
+mario1992Button.addEventListener("click", () => {
+    nintendoSwitch.src = '../images/mario-kart-1993.png';
+});
+
+mario2007Button.addEventListener("click", () => {
+    nintendoSwitch.src = '../images/mario-galaxy.png';
+});
+
+mario2006Button.addEventListener("click", () => {
+    nintendoSwitch.src = '../images/mario-wii.png';
+});
+
+mario2020Button.addEventListener("click", () => {
+    nintendoSwitch.src = '../images/mario-paper.png';
+});
+
+mario2015Button.addEventListener("click", () => {
+    nintendoSwitch.src = '../images/mario-maker.png';
+});
+
+mario2013Button.addEventListener("click", () => {
+    nintendoSwitch.src = '../images/mario-3d.png';
+});
 
 
 //FUNCTIES
@@ -130,13 +165,6 @@ function marioPyroman() {
     }
 }
 
-// Functie Mario Wordt groter
-
-// function marioWordtGroter() {
-//     var derdeAfbeelding = document.querySelector("article:first-of-type img");
-//     derdeAfbeelding.classList.toggle("derde-afbeelding");
-// }
-
 // Functie dat stop de springende Mario animatie
 function playAnimatieMetControllers() {
     var deAnimatie = document.querySelector(" .wrapper img");
@@ -151,14 +179,30 @@ function haalNintendoWeg() {
     deNintendo.classList.toggle("haal-weg");
 }
 //Mario in ijs pak
-function marioIjsBloem(){
+function marioIjsBloem() {
     var ijsPakAfbeelding = document.querySelector("article:first-of-type img");
     ijsPakAfbeelding.classList.toggle("ijspak-mario");
     var deDerdeTitel = document.querySelector("article:first-of-type h1");
-    if(ijsPakAfbeelding.classList.contains("ijspak-mario")){
-        deDerdeTitel.innerHTML ="Mario als winterman";
-    }else {
-          deDerdeTitel.innerHTML = "Mario oddessy"
+    if (ijsPakAfbeelding.classList.contains("ijspak-mario")) {
+        deDerdeTitel.innerHTML = "Mario als winterman";
+    } else {
+        deDerdeTitel.innerHTML = "Mario oddessy"
+    }
+}
+
+// Als de gebruiker op de sterretje speelt dan komt hoor je een muziek in de achtergrond
+
+function speelHetMuziek() {
+    // var url = "../audio/super-mario-star-sound";
+    const audio = new Audio("../audio/super-mario-star-sound.mp3");
+    sterButton.classList.toggle("speel-muziek");
+    if (sterButton.classList.contains("speel-muziek")) {
+        audio.play();
+
+    } else {
+        audio.pause();
+        audio.currentTime = 0;
+        //https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click
     }
 }
 

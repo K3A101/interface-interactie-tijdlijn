@@ -9,6 +9,7 @@
   font-style: normal;
 }
 
+/* Gebruikte fonts https://www.dafont.com/super-mario-256.font*/
 
 
 /*************/
@@ -99,21 +100,16 @@ button:focus-visible {
   /* States */
   --joysticks-hover-state-kleuren: radial-gradient(circle at right, rgba(25 25 25 / 0.5) 5%, rgba(0 0 0 / 1) 100%);
   --focus-state: drop-shadow(.2em .2em .5em #E62310);
-  /* radial-gradient(circle, rgb(255 255 255 / 0.5) 0%, rgba(255 255 255 / 1) 73%); */
+
 
   /* Box-shadows */
   --back-shadow-voor-controllers: .2em .2em .5em rgba(0 0 0 / .5);
 }
 
-/* */
-/* radial-gradient(circle, rgba(236 200 34 /1) 0%, rgba(230 35 16 / 1) 89%) */
-/* radial-gradient(circle, rgba(236 200 34 /0.07) 0%, rgba(230 40 16 / 0.5) 70%, rgba(162 17 3/ 0.8) 95%) */
-/* linear-gradient(0deg, rgba(145, 222, 255, 1) 19%, rgba(0, 155, 217, 1) 73%) */
 
 @media (prefers-color-scheme: dark) {
   :root {
     --mario-rood: #a52115;
-    ;
     --achterground-gradient: linear-gradient(357deg, rgba(51, 122, 194, 1) 12%, rgba(27, 72, 181, 1) 50%, rgba(23, 37, 73, 1) 91%);
   }
 }
@@ -148,6 +144,7 @@ h1 {
 h2 {
   font-family: var(--Kopjes);
   font-size: .9em;
+  color: var(--mario-rood);
 }
 
 
@@ -257,7 +254,6 @@ article:first-of-type h1 {
 }
 
 /* Nintendo scherm */
-/* https: //css-tricks.com/snippets/css/gradient-text/ */
 article:first-of-type figure {
   display: grid;
   place-content: center;
@@ -315,8 +311,6 @@ article:first-of-type>section section {
   grid-template-columns: 1em 1em;
   gap: 1em;
   position: relative;
-  /* width: 2.5em;
-height: 2.5em; */
 }
 
 /* Joysticks */
@@ -381,22 +375,6 @@ article:first-of-type>section section button:focus-visible {
   justify-self: center;
 }
 
-/* Haal me knop */
-/* article:first-of-type>button {
-  border-radius: 2em;
-  position: absolute;
-  padding: .5em;
-  top: 2em;
-  right: -4em;
-  background: var(--witte-kleur);
-  transition: .5s;
-  opacity: 1;
-}
-
-article:first-of-type>button:hover {
-  box-shadow: var(--back-shadow-voor-controllers);
-} */
-
 
 
 
@@ -428,18 +406,6 @@ article:nth-of-type(2) img {
   object-fit: contain;
 }
 
-/* article:nth-of-type(2) img:nth-of-type(1) */
-/* .mario-1981-afbeelding {
-  content: url(../images/mario-donkey-kong.png);
-}
-
-.mario-1985-afbeelding {
-  content: url(../images/first-mario.png);
-}
-
-.mario-1991-afbeelding {
-  content: url(../images/mario-super-mario-bro-3.png);
-} */
 
 article:nth-of-type(2) ol {
   display: grid;
@@ -459,9 +425,6 @@ article:nth-of-type(2) li {
   /* transition: 1s; */
 }
 
-/* article:nth-of-type(2) li:hover {
-  transform: scale(1.5) rotate(15deg);
-} */
 
 article:nth-of-type(2) li>button {
   background-color: none;
@@ -550,21 +513,6 @@ article:nth-of-type(2) li section>p {
   padding: .5em;
 }
 
-/* Anuleer knop */
-article:nth-of-type(2) li section>button::before {
-  content: url(../images/close-button.svg);
-  height: .5em;
-  width: .5em;
-}
-
-/* https: //icons8.com/icons/set/cancel */
-
-/* De normal blocks met a ipv van button */
-/* article:nth-of-type(2) li  a{
-  display: grid;
-  place-content: center;
-
-} */
 /* WOLKEN IN DE ACHTERGROND */
 article:nth-of-type(3) {
   position: absolute;
@@ -636,15 +584,6 @@ article:nth-of-type(3) section:nth-of-type(4) {
   }
 }
 
-/* 
-@keyframes wolken-bewegen {
-  0% {
-    left: -30%;
-  }
-  100%{
-    left: 100%;
-  }
-} */
 
 
 
@@ -902,7 +841,6 @@ footer li:nth-of-type(5) img:hover {
   }
 
   main {
-    /* background-color: red; */
     margin: 0 auto;
     width: 70%;
   }

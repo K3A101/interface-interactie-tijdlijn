@@ -130,20 +130,39 @@ Ik heb ten eerste een kleur gezocht die passend is bij mario. Verder heb ik gezo
    Verder vond ik de kleur te fel, dus ik heb de achtergrond kleur van de body weer verandert naar blauw. Want het past beter bij de mario wereld spel.
    Verder heb ik de alle vormen een ronde hoek gegeven zodat het past elkaar. 
 
-  ### Bevinding 2:
+  ### Bevinding 2: Responsiveness
 Volgende stap voor mijn ontwerp is de onderdelen responsive te maken. Ik was eerst van plan om het responsive te maken bij grotere schermen. Maar daarna heb ik besloten om ook voor kleine schermen te maken.
 
   <img src="readme-images/ontwerp-mobile.png" width="375px" alt="Eeerste ontwerp">
 
 
-  #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  #### Oplossing:
+Ik heb gebruikt gemaakt van media queries. Waar ik de flex-direction verandert van row naar een column;
 
+```
+@media (max-width: 50em) {
+  body {
+    overflow: auto;
+  }
 
+  main {
+    display: flex;
+    flex-direction: column;
+  }
 
-  ### Bevinding 3:
+ 
+}
+
+```
+
+  ### Bevinding 3: Progressive disclosure 
+  Om  progressive disclosure toe te voegen wilde ik de nintendo verbergen en dan met een knop wil zichtbaar maken. Met die
+  Tijdens mij tweede gesprek met Ine, heeft ze gezegd dat ik bij de haal me knop moet ik een betere call-to-action naam moet geven. 
+
+  #### Oplossing
   ...
 
+#
 </details>
 
 
@@ -154,7 +173,7 @@ Volgende stap voor mijn ontwerp is de onderdelen responsive te maken. Ik was eer
 <details>
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
   
-  ### Bevinding 1:
+  ### Bevinding 1: Dark mode toegevoegd
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
   #### oplossing:
@@ -238,4 +257,6 @@ Volgende stap voor mijn ontwerp is de onderdelen responsive te maken. Ik was eer
 - Speech bubble vormen maken - https://codepen.io/RajRajeshDn/pen/oZdRJw 
 
 - Informatie over de evolutie van Mario - https://www.superluigibros.com/evolution-of-mario
+
+- Prefer-color-scheme: dark - https: //designkojo.com/using-prefers-color-scheme-and-css-custom-properties 
 </details>

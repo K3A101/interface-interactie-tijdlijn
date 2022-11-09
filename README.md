@@ -291,7 +291,7 @@ De laatse onderdeel was om de website interactiever en dynamischer te maken met 
 
 Als je op de krachten klikt, dan kan je mario zien met zijn kostuum. Ook de naam verandert. 
 
- <img src="readme-images\tanooki-mario.png"  alt="Tanooki Mario">
+ <img src="readme-images\tanooki-mario.png" width="375px" alt="Tanooki Mario">
  
  Hier is mario in een wasbeer pak.
 
@@ -322,6 +322,16 @@ In meeste mario videogames speelt dit geluid af waneer  mario de ster pakt en ik
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="final ontwerp">
 
 ### Dit ging goed/Heb ik geleerd:
+
+#### Donker modus
+Met code leer je altijd iets nieuws. Dus  ja heb ik wat geleerd. Ten eerste kon ik eindelijk donker mode in een van projecten implementeren. Ik vond het geweldig. Volgende keer weer ik een toggle button maken waar je kan wisselen tussen de donkere en lichter modus.
+
+#### Meer javascript te krijgen 
+Vervolgens durfde ik meer dingen te proberen met Javascript. Nou tot nu is het niet zo efficient geschreven maar ik het begrijp het. Met javascript heb ik met knopjes verschillende dingen laten gebeuren zoals een animatie, foto verandering, geluid in de achtergrond en aanpassingen in de `<body>` achtergrond kleur. 
+
+
+#### Meer animaties 
+Voor de animaties ging ik niet over de top, maar had best veel geleerd onder andere de properties van animatie zoals `animation-fill-mode` waar je de animatie kan beindigen op bepaalde keyframes. Verder heb ik 
 
 - Dark mode 
 - Veel javascript

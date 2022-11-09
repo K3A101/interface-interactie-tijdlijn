@@ -147,7 +147,7 @@ button9.addEventListener("click", () => {
 var nintendoSwitch = document.querySelector("article > figure > img");
 
 mario1981Button.addEventListener("click", () => {
-    nintendoSwitch.src = './main/images/mario-donkey-kong.png';
+    nintendoSwitch.src = './images/mario-donkey-kong.png';
 });
 
 mario1985Button.addEventListener("click", () => {

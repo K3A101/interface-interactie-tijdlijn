@@ -98,6 +98,7 @@ button:focus-visible {
   --speech-bubbel-kleur: white;
   --joysticks-kleuren: radial-gradient(circle, rgba(25 25 25 / 0.5) 5%, rgba(0 0 0 / 1) 100%);
   --nintendo-binnen-scherm: #303030;
+  --podium-kleur: grey;
 
   /* States */
   --joysticks-hover-state-kleuren: radial-gradient(circle at right, rgba(25 25 25 / 0.5) 5%, rgba(0 0 0 / 1) 100%);
@@ -393,8 +394,8 @@ article:first-of-type>section section button:focus-visible {
   width: 10em;
   height: 4em;
   border-radius: 50%;
-  border-bottom: 1em solid black;
-  background-color: grey;
+  border-bottom: 1em solid var(--mario-zwart);
+  background-color: var(--podium-kleur);
   justify-self: center;
 }
 
@@ -504,8 +505,8 @@ article:nth-of-type(2) li section::before {
   height: 0px;
   position: absolute;
   border-left: 10px solid transparent;
-  border-right: 10px solid white;
-  border-top: 10px solid white;
+  border-right: 10px solid var(--witte-kleur);
+  border-top: 10px solid var(--witte-kleur);
   border-bottom: 10px solid transparent;
   right: 1.5em;
   bottom: -.5em;
@@ -560,7 +561,7 @@ article:nth-of-type(3) section:nth-of-type(2n) {
 /* Ogen van de wolken */
 article:nth-of-type(3) section a {
   border-radius: 1em;
-  background-color: #000000;
+  background-color: var(--mario-zwart);
   width: .2em;
   height: .7em;
 }
@@ -678,7 +679,7 @@ footer li {
   width: 5em;
   height: 5em;
   transform: translateY(-1em);
-  background-color: white;
+  background-color: var(--witte-kleur);
   border-radius: 50%;
   transition: 1s;
 }

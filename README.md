@@ -15,6 +15,9 @@ Blauw
 <details open>
   <summary>De eerste versie/schets van je ontwerp & je persoonlijke uitdaging</summary>
 
+### Inspiratie voor concept
+<img src="readme-images\inspiratie-idee.jpg" alt="Inspiratie voor mijn concept">
+
 ### Mindmap van Mario
 
 In mijn onderzoek ging ik brainstormen over wat de eigenschappen zijn van Mario en hierdoor heb ik een mindmap gemaakt.

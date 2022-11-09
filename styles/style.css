@@ -690,7 +690,7 @@ footer li:first-of-type {
 footer li:first-of-type img {
   animation-name: springende-mushroom;
   animation-duration: 1s;
-  animation-iteration-count: 5;
+  animation-iteration-count: 6;
 }
 
 footer li:first-of-type img:hover {
@@ -707,7 +707,7 @@ footer li:first-of-type img:hover {
   }
 
   50% {
-    transform: translateY(-2em);
+    transform: translateY(-5em);
     animation-timing-function: ease-out;
   }
 

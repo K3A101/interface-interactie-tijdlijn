@@ -57,7 +57,6 @@ body.regenboog-achtergrond {
   }
 }
 
-
 button:not([disabled]) {
   cursor: pointer;
   border: none;
@@ -96,10 +95,11 @@ button:focus-visible {
   --blokjes-gradient-achtergrond: radial-gradient(circle, rgb(255 255 255 / 0.2) 0%, rgba(255 255 255 / 1) 73%);
   --speech-bubbel-kleur: white;
   --joysticks-kleuren: radial-gradient(circle, rgba(25 25 25 / 0.5) 5%, rgba(0 0 0 / 1) 100%);
+  --nintendo-binnen-scherm: #303030;
 
   /* States */
   --joysticks-hover-state-kleuren: radial-gradient(circle at right, rgba(25 25 25 / 0.5) 5%, rgba(0 0 0 / 1) 100%);
-  --focus-state: drop-shadow(.2em .2em .5em #E62310);
+  --focus-state: rgba(230, 34, 16, 0.814);
 
 
   /* Box-shadows */
@@ -113,7 +113,6 @@ button:focus-visible {
     --achterground-gradient: linear-gradient(357deg, rgba(51, 122, 194, 1) 12%, rgba(27, 72, 181, 1) 50%, rgba(23, 37, 73, 1) 91%);
   }
 }
-
 /* https: //designkojo.com/using-prefers-color-scheme-and-css-custom-properties */
 
 
@@ -163,7 +162,7 @@ header {
 }
 
 header h1 {
-  color: white;
+  color: var(--witte-kleur);
   font-family: var(--Kopjes);
   font-size: 2.5em;
   text-shadow: .05em .1em .2em rgba(0, 0, 0, 0.752);
@@ -173,7 +172,7 @@ header h1 {
 header a {
   width: 2em;
   height: 2em;
-  background-color: white;
+  background-color: var(--witte-kleur);
   color: var(--mario-rood);
   display: flex;
   place-content: center;
@@ -217,7 +216,6 @@ main {
   margin: 0 3em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
-  /* grid-template-rows: 33em; */
   gap: 2em;
   place-content: center;
 }
@@ -246,7 +244,7 @@ article:first-of-type.haal-weg {
 }
 
 article:first-of-type h1 {
-  color: white;
+  color: var(--witte-kleur);
   text-shadow: .01em .05em .2em rgba(0 0 0 /0.752);
   text-align: center;
   font-size: 2.5em;
@@ -257,7 +255,7 @@ article:first-of-type h1 {
 article:first-of-type figure {
   display: grid;
   place-content: center;
-  background-color: #303030;
+  background-color: var(--nintendo-binnen-scherm);
   padding: 1em;
   border-radius: .5em;
 }
@@ -276,7 +274,7 @@ article:first-of-type figure img {
 }
 
 /* Hoe maak je afbeelding dezelfde size: https://stackoverflow.com/questions/19414856/how-can-i-make-all-images-of-different-height-and-width-the-same-via-css */
-
+/* Als je  op de krachten klikt dan verandert de afbeelding verandert */
 /* Mario wordt een wasbeer */
 .tanooki-afbeelding {
   content: url(../images/tanooki-suit.png);
@@ -292,12 +290,15 @@ article:first-of-type figure img {
 .ijspak-mario {
   content: url(../images/mario-ijs.png);
 }
-
-
 /* https: //www.clipartmax.com/download/m2i8i8G6d3i8G6b1_un-mario-wiki-mario-party-ds-mario/ */
-/***************/
-/* CONTROLLERS */
-/***************/
+
+
+
+
+
+/*******************************/
+/* NINTENDO SWITCH CONTROLLERS */
+/*******************************/
 article:first-of-type>section {
   display: flex;
   position: relative;
@@ -321,7 +322,27 @@ article:first-of-type>section>button {
   background: var(--joysticks-kleuren);
   box-shadow: var(--back-shadow-voor-controllers);
   transition: .5s;
+  animation: maak-joystick-klikbaar 2s infinite;
 }
+
+@keyframes maak-joystick-klikbaar {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--focus-state);
+  }
+
+  75% {
+    transform: scale(1.1);
+    box-shadow: 0 0 .5em .5em var(--focus-state);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--focus-state);
+  }
+}
+
+/* Bron: geleerd van Emy */
 
 article:first-of-type>section>button:hover,
 article:first-of-type>section>button:focus {
@@ -365,7 +386,7 @@ article:first-of-type>section section button:hover,
 article:first-of-type>section section button:focus-visible {
   box-shadow: inset -.3em .3em .3em rgba(0 0 0 / .5);
 }
-
+/* De podium waar de karakter op staat */
 .podium {
   width: 10em;
   height: 4em;
@@ -379,11 +400,10 @@ article:first-of-type>section section button:focus-visible {
 
 
 
-/*******************/
-/* MARIO SELECTION */
-/*******************/
+/***********************/
+/* MARIO SELECTIE MENU */
+/***********************/
 article:nth-of-type(2) {
-  /* background-image: url(../images/mario_clouds_desktop_by_sadistmoi_d23mm2j-fullview.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   grid-column-start: 2;
@@ -400,20 +420,21 @@ article:nth-of-type(2)::after {
   height: 0;
 }
 
+/* De verschillende mario afbeeldingen */
 article:nth-of-type(2) img {
   width: 7em;
   height: auto;
   object-fit: contain;
 }
 
-
+/* De tijdlijn lijst */
 article:nth-of-type(2) ol {
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr; */
   grid-template-columns: repeat(3, 10em);
   gap: .5em;
 }
 
+/* Achtergrond van de Mario afbeeldingen */
 article:nth-of-type(2) li {
   position: relative;
   border-radius: .5em;
@@ -422,9 +443,7 @@ article:nth-of-type(2) li {
   background: var(--blokjes-gradient-achtergrond);
   display: grid;
   place-content: center;
-  /* transition: 1s; */
 }
-
 
 article:nth-of-type(2) li>button {
   background-color: none;
@@ -476,6 +495,7 @@ article:nth-of-type(2) li section.openBubble {
   display: block;
 }
 
+/* De hoek punten van de speech bubble */
 article:nth-of-type(2) li section::before {
   content: "";
   width: 0px;
@@ -488,19 +508,9 @@ article:nth-of-type(2) li section::before {
   right: 1.5em;
   bottom: -.5em;
 }
+/* Code voor de speech bubble: https://codepen.io/RajRajeshDn/pen/oZdRJw */
 
-
-
-/* https://codepen.io/RajRajeshDn/pen/oZdRJw */
-
-article:nth-of-type(2) li section>button {
-  order: 1;
-  width: 2em;
-  height: 2em;
-  border-radius: .5em;
-  align-self: end;
-}
-
+/* Content binnen de speech bubble */
 article:nth-of-type(2) li section>h2 {
   text-align: center;
 }
@@ -508,8 +518,8 @@ article:nth-of-type(2) li section>h2 {
 article:nth-of-type(2) li section>p {
   line-height: 1.1;
   font-size: .9em;
-  font-weight: 600;
-  text-align: left;
+  font-weight: 400;
+  text-align: center;
   padding: .5em;
 }
 
@@ -553,32 +563,32 @@ article:nth-of-type(3) section a {
   height: .7em;
 }
 
+/* Animaties per wolk */
 article:nth-of-type(3) section:nth-of-type(1) {
   left: 25em;
-  animation: wolken-met-position 5s ease infinite;
+  animation: wolken-bewegen 5s ease infinite;
 }
 
 article:nth-of-type(3) section:nth-of-type(2) {
-  /* transform: translateY(13em) translateX(30em); */
   top: 4em;
   left: 21em;
-  animation: wolken-met-position 4s ease infinite;
+  animation: wolken-bewegen 4s ease infinite;
 }
 
 article:nth-of-type(3) section:nth-of-type(3) {
   right: -80em;
   top: 10em;
-  animation: wolken-met-position 3s ease infinite;
+  animation: wolken-bewegen 3s ease infinite;
 
 }
 
 article:nth-of-type(3) section:nth-of-type(4) {
   right: -70em;
   top: 1em;
-  animation: wolken-met-position 6s ease infinite;
+  animation: wolken-bewegen 6s ease infinite;
 }
 
-@keyframes wolken-met-position {
+@keyframes wolken-bewegen {
   50% {
     transform: translateY(25%);
   }
@@ -588,9 +598,10 @@ article:nth-of-type(3) section:nth-of-type(4) {
 
 
 
-/*****************/
-/* Walking mario */
-/*****************/
+/********************/
+/* SPRINGENDE MARIO */
+/********************/
+/* De Mario afbeelding */
 body>.wrapper img {
   width: 10%;
   z-index: 1;
@@ -604,7 +615,7 @@ body>.wrapper img {
   animation-fill-mode: forwards;
   animation-play-state: paused;
 }
-
+/* Wrapper van de afbeelding */
 .wrapper {
   animation-name: y-axis;
   animation-duration: 1s;
@@ -613,7 +624,7 @@ body>.wrapper img {
   transform: translateY(-1em);
 }
 
-
+/* Animatie die ervoor zorgt dat mario van links naar rechts beweegt*/
 @keyframes x-axis {
   0% {
     left: -30%;
@@ -628,7 +639,7 @@ body>.wrapper img {
     opacity: 0;
   }
 }
-
+/* Animatie die ervoor zorgt dat mario springt */
 @keyframes y-axis {
   50% {
     transform: translateY(-30em);
@@ -640,7 +651,6 @@ body>.wrapper img.pauseer-animatie,
 .wrapper.pauseer-animatie {
   animation-play-state: running;
 }
-
 /* https://stackoverflow.com/questions/47754999/css-animation-absolute-position-go-off-screen-to-right-and-come-back-from-left */
 
 
@@ -661,7 +671,7 @@ footer ul {
   display: flex;
   gap: 1em
 }
-
+/* Ronde achtergrond */
 footer li {
   width: 5em;
   height: 5em;
@@ -686,21 +696,58 @@ footer li:first-of-type {
   box-shadow: .3em .3em var(--mario-rood);
 }
 
+/* Een manier om de gebruiker aandacht te trekken  */
+footer li:first-of-type::after{
+  content: " Klik op mij!";
+  display: grid;
+  place-content: center;
+  align-items: center;
+  color:var(--mario-rood);
+  border-radius: 3em;
+  font-size: 1.2em;
+  font-weight: 600;
+  background-color: var(--witte-kleur);
+  font-family: var(--paragraaf-lettertype);
+  position: absolute;
+  top: -5.5em;
+  left: -3em;
+  width: 10em;
+  height: 4.5em;
+  opacity: 0;
+  box-shadow: var(--back-shadow-voor-controllers);
+  /* border: .2em solid var(--mario-rood); */
+}
+
+footer li:first-of-type::after {
+  animation: maak-paddenstoel-zichtbaar 2s 3;
+}
+
+/*   */
+@keyframes maak-paddenstoel-zichtbaar {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+
+  }
+}
 
 footer li:first-of-type img {
-  animation-name: springende-mushroom;
+  animation-name: springende-paddenstoel;
   animation-duration: 1s;
   animation-iteration-count: 6;
 }
 
 footer li:first-of-type img:hover {
-  animation-name: mushroom-wordt-onzichtbaar;
+  animation-name: paddenstoel-wordt-wazig;
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
 
 
-@keyframes springende-mushroom {
+@keyframes springende-paddenstoel {
   0% {
     transform: translateY(0);
     animation-timing-function: ease-in;
@@ -717,13 +764,11 @@ footer li:first-of-type img:hover {
   }
 }
 
-@keyframes mushroom-wordt-onzichtbaar {
+@keyframes paddenstoel-wordt-wazig {
   0% {
     transform: scale(1);
     opacity: 1;
   }
-
-
   100% {
     opacity: 0;
     transform: scale(1.5);

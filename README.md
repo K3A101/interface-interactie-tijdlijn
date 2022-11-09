@@ -252,6 +252,7 @@ Dus de afbeelding blijven nu op dezelfde grootte.
 </details>
 
 ## Voortgang/Feedback 3
+### Bekeken door Emy
 
 <details>
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>

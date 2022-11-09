@@ -56,6 +56,7 @@ body.regenboog-achtergrond {
     background-position: right top;
   }
 }
+/* Regenboog animatie: https://codepen.io/keisha-alexander/pen/GRGqEmZ */
 
 button:not([disabled]) {
   cursor: pointer;
@@ -84,6 +85,7 @@ button:focus-visible {
   --nintendo-switch-kleur: radial-gradient(circle, rgb(255 255 255 / 0.2) 0%, rgba(255 255 255 / .8) 73%);
   --wolken-kleur: rgba(255 255 255);
   --witte-kleur: white;
+  /* Super mario logo kleurpallette - https: //brandpalettes.com/super-mario-logo-colors/ */
 
   /* Hoofdtitelfonts */
   --Kopjes: "mario";

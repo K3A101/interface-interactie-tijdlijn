@@ -202,7 +202,7 @@ function speelHetMuziek() {
         audio.currentTime = 0;
         audio.pause();
         deBody.classList.remove("regenboog-achtergrond");
-        //https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click
+        //Bron: hoe je geluid kan toevoegen met javascript https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click
     }
 }
 
